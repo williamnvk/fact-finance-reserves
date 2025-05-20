@@ -1,9 +1,8 @@
 
 import { 
-  Bitcoin, 
-  Chainlink, 
-  Ethereum, 
-  Polygon, 
+  Circle, 
+  Link, 
+  Hexagon, 
   CircleCheck, 
   Shield 
 } from "lucide-react";
@@ -32,12 +31,12 @@ interface TokenListProps {
 }
 
 export function TokenList({ tokens }: TokenListProps) {
-  // Map of chain names to their respective icons
+  // Map of chain names to their respective icons using available lucide-react icons
   const chainIcons: Record<string, JSX.Element> = {
-    ethereum: <Ethereum size={18} />,
-    bitcoin: <Bitcoin size={18} />,
-    polygon: <Polygon size={18} />,
-    chainlink: <Chainlink size={18} />
+    ethereum: <Circle size={18} className="text-blue-500" />, // Using Circle for Ethereum
+    bitcoin: <Circle size={18} className="text-orange-500" />, // Keep Bitcoin as a circle with orange color
+    polygon: <Hexagon size={18} className="text-purple-500" />, // Using Hexagon for Polygon
+    chainlink: <Link size={18} className="text-blue-400" /> // Using Link for Chainlink
   };
   
   // Function to get shortened contract address
