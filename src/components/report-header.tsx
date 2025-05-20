@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Shield } from "lucide-react";
 
 interface ReportHeaderProps {
   companyName: string;
@@ -52,15 +52,15 @@ export function ReportHeader({ companyName, reserveRatio, reportDate }: ReportHe
         </div>
       </div>
       
-      <div className="bg-card rounded-lg p-6 text-center">
-        <div className="flex justify-center mb-2">
-          <div className="w-20 h-20 rounded-full bg-amber-100 border-4 border-amber-200 flex items-center justify-center">
-            <div className="w-12 h-12 rounded-full bg-amber-300"></div>
+      <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg p-6 text-center border border-gray-200 shadow-sm">
+        <div className="flex justify-center mb-3">
+          <div className="w-20 h-20 rounded-full bg-gray-100 border-4 border-gray-200 flex items-center justify-center">
+            <Shield size={36} className="text-gray-500" />
           </div>
         </div>
-        <p className="text-lg">{companyName}</p>
-        <h2 className="text-4xl font-bold mt-1">{reserveRatio}</h2>
-        <p className="text-sm text-muted-foreground mt-2">
+        <p className="text-lg text-gray-700">{companyName}</p>
+        <h2 className="text-4xl font-bold mt-1 text-gray-800">{reserveRatio}</h2>
+        <p className="text-sm text-gray-600 mt-2">
           {companyName} held more Reserves than the sum of circulation tokens
         </p>
       </div>

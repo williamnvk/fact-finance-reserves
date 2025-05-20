@@ -106,12 +106,14 @@ const Index = () => {
             />
           </div>
           
-          <ReservesBreakdown 
-            totalAssets="$149,274,515,968.00" 
-            totalLiabilities="$143,682,673,568.00" 
-            netEquity="$5,591,842,400.00"
-            assetDistribution={ASSET_DISTRIBUTION}
-          />
+          <div className="reserves-section">
+            <ReservesBreakdown 
+              totalAssets="$149,274,515,968.00" 
+              totalLiabilities="$143,682,673,568.00" 
+              netEquity="$5,591,842,400.00"
+              assetDistribution={ASSET_DISTRIBUTION}
+            />
+          </div>
           
           <AuditReport date="May 02, 2025" pages={5} />
           
