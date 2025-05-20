@@ -28,7 +28,7 @@ export function BalancesChart({ circulation, reserves }: BalancesChartProps) {
   // Format for the tooltip
   const formatValue = (value: number) => `$${value.toFixed(1)}B`;
   
-  // Custom tooltip
+  // Custom tooltip with safety checks to avoid accessing undefined properties
   const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
       if (payload[0].name === "Circulation") {
@@ -39,13 +39,17 @@ export function BalancesChart({ circulation, reserves }: BalancesChartProps) {
           </div>
         );
       } else {
-        const totalReserves = payload[0].value + (payload[1]?.value || 0);
+        // Safety check for the reserves data
+        const cashFundsValue = payload[0]?.value || 0;
+        const cashBanksValue = payload[1]?.value || 0;
+        const totalReserves = cashFundsValue + cashBanksValue;
+        
         return (
           <div className="bg-card border p-3 shadow-sm rounded-md">
             <p className="text-sm font-medium">Reserves</p>
             <p className="text-sm text-primary">{formatValue(totalReserves)}</p>
-            <p className="text-xs text-muted-foreground mt-1">Cash Funds: {formatValue(payload[0].value)}</p>
-            <p className="text-xs text-muted-foreground">Cash in Banks: {formatValue(payload[1].value)}</p>
+            <p className="text-xs text-muted-foreground mt-1">Cash Funds: {formatValue(cashFundsValue)}</p>
+            <p className="text-xs text-muted-foreground">Cash in Banks: {formatValue(cashBanksValue)}</p>
           </div>
         );
       }
