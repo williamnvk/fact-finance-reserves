@@ -52,7 +52,7 @@ export function ReportHeader({ companyName, reserveRatio, reportDate }: ReportHe
         </div>
       </div>
       
-      <div className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-lg p-6 text-center border border-gray-200 dark:border-gray-700 shadow-sm">
+      <div className="bg-card rounded-lg p-6 text-center border border-gray-200 dark:border-gray-700 shadow-sm">
         <div className="flex justify-center mb-3">
           <div className="w-20 h-20 rounded-full bg-gray-100 dark:bg-gray-700 border-4 border-gray-200 dark:border-gray-600 flex items-center justify-center">
             <Shield size={36} className="text-gray-500 dark:text-gray-300" />

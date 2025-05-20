@@ -97,10 +97,10 @@ const Index = () => {
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-            <div className="bg-card rounded-lg border p-6 shadow-sm">
+            <div className="bg-card rounded-lg border p-6 shadow-sm h-full">
               <BalancesChart circulation={60.5} reserves={60.7} />
             </div>
-            <div className="bg-card rounded-lg border p-6 shadow-sm">
+            <div className="bg-card rounded-lg border p-6 shadow-sm h-full">
               <ChangeChart 
                 emitido={14.2} 
                 resgatado={14.0} 
@@ -111,6 +111,7 @@ const Index = () => {
           </div>
           
           <div className="bg-card rounded-lg border p-6 shadow-sm mt-12 mb-8">
+            <h2 className="text-2xl font-bold mb-6">Reserves</h2>
             <ReservesBreakdown 
               totalAssets="$149,274,515,968.00" 
               totalLiabilities="$143,682,673,568.00" 

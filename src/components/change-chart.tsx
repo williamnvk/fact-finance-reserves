@@ -27,7 +27,7 @@ export function ChangeChart({ emitido, resgatado, change, historicalData }: Chan
   };
 
   return (
-    <div className="card-dashboard h-80">
+    <div className="chart-card">
       <div>
         <h3 className="subtitle">Mudança de 30 dias</h3>
         <div className="grid grid-cols-2 gap-4 mt-2">
@@ -54,29 +54,31 @@ export function ChangeChart({ emitido, resgatado, change, historicalData }: Chan
         </div>
       </div>
       
-      <ResponsiveContainer width="100%" height={200}>
-        <LineChart data={historicalData} margin={{ top: 20, right: 10, left: 10, bottom: 10 }}>
-          <XAxis dataKey="hour" />
-          <YAxis domain={['dataMin - 100', 'dataMax + 100']} hide />
-          <Tooltip content={<CustomTooltip />} />
-          <Line 
-            type="monotone" 
-            dataKey="reserves" 
-            stroke="hsl(var(--primary))" 
-            dot={false} 
-            strokeWidth={2}
-          />
-          <Line 
-            type="monotone" 
-            dataKey="circulation" 
-            stroke="hsl(var(--chart-blue)/50)" 
-            dot={false} 
-            strokeWidth={2}
-          />
-        </LineChart>
-      </ResponsiveContainer>
+      <div className="chart-container">
+        <ResponsiveContainer width="100%" height={200}>
+          <LineChart data={historicalData} margin={{ top: 20, right: 10, left: 10, bottom: 10 }}>
+            <XAxis dataKey="hour" axisLine={false} tickLine={false} />
+            <YAxis domain={['dataMin - 100', 'dataMax + 100']} hide />
+            <Tooltip content={<CustomTooltip />} />
+            <Line 
+              type="monotone" 
+              dataKey="reserves" 
+              stroke="hsl(var(--primary))" 
+              dot={false} 
+              strokeWidth={2}
+            />
+            <Line 
+              type="monotone" 
+              dataKey="circulation" 
+              stroke="hsl(var(--chart-blue)/50)" 
+              dot={false} 
+              strokeWidth={2}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
       
-      <div className="flex justify-center gap-4 mt-2">
+      <div className="chart-legend">
         <div className="flex items-center">
           <div className="h-0.5 w-4 bg-primary mr-1"></div>
           <span className="text-xs">Reserva</span>
