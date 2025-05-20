@@ -72,13 +72,18 @@ export function BalancesChart({ circulation, reserves }: BalancesChartProps) {
       
       <div className="chart-container">
         <ResponsiveContainer width="100%" height={240}>
-          <BarChart data={data} margin={{ top: 30, right: 10, left: 0, bottom: 30 }} barGap={50}>
+          <BarChart 
+            data={data} 
+            margin={{ top: 30, right: 30, left: 30, bottom: 30 }} 
+            barGap={0} 
+            barCategoryGap="35%"
+          >
             <XAxis dataKey="name" />
-            <YAxis domain={[0, 'dataMax + 10']} hide />
+            <YAxis domain={[0, 'dataMax + 5']} hide />
             <Tooltip content={<CustomTooltip />} />
             <Bar dataKey="value" radius={[8, 8, 0, 0]} />
             <Bar dataKey="cashFunds" stackId="reserves" radius={[8, 8, 0, 0]} fill="hsl(var(--chart-navy))" />
-            <Bar dataKey="cashBanks" stackId="reserves" radius={[8, 8, 0, 0]} fill="hsl(var(--chart-light-blue))" />
+            <Bar dataKey="cashBanks" stackId="reserves" radius={[0, 0, 0, 0]} fill="hsl(var(--chart-light-blue))" />
           </BarChart>
         </ResponsiveContainer>
       </div>

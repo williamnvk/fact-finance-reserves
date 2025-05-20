@@ -56,9 +56,19 @@ export function ChangeChart({ emitido, resgatado, change, historicalData }: Chan
       
       <div className="chart-container">
         <ResponsiveContainer width="100%" height={200}>
-          <LineChart data={historicalData} margin={{ top: 20, right: 10, left: 10, bottom: 10 }}>
-            <XAxis dataKey="hour" axisLine={false} tickLine={false} />
-            <YAxis domain={['dataMin - 100', 'dataMax + 100']} hide />
+          <LineChart 
+            data={historicalData} 
+            margin={{ top: 50, right: 10, left: 10, bottom: 10 }}
+          >
+            <XAxis 
+              dataKey="hour" 
+              axisLine={false} 
+              tickLine={false}
+            />
+            <YAxis 
+              domain={['dataMin + 200', 'dataMax + 300']} 
+              hide
+            />
             <Tooltip content={<CustomTooltip />} />
             <Line 
               type="monotone" 
