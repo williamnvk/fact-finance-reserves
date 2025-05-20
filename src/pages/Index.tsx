@@ -96,17 +96,21 @@ const Index = () => {
             reportDate="May 06, 2025" 
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <BalancesChart circulation={60.5} reserves={60.7} />
-            <ChangeChart 
-              emitido={14.2} 
-              resgatado={14.0} 
-              change={0.28}
-              historicalData={generateHistoricalData()} 
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            <div className="bg-card rounded-lg border p-6 shadow-sm">
+              <BalancesChart circulation={60.5} reserves={60.7} />
+            </div>
+            <div className="bg-card rounded-lg border p-6 shadow-sm">
+              <ChangeChart 
+                emitido={14.2} 
+                resgatado={14.0} 
+                change={0.28}
+                historicalData={generateHistoricalData()} 
+              />
+            </div>
           </div>
           
-          <div className="reserves-section">
+          <div className="bg-card rounded-lg border p-6 shadow-sm mt-12 mb-8">
             <ReservesBreakdown 
               totalAssets="$149,274,515,968.00" 
               totalLiabilities="$143,682,673,568.00" 
@@ -115,11 +119,17 @@ const Index = () => {
             />
           </div>
           
-          <AuditReport date="May 02, 2025" pages={5} />
+          <div className="bg-card rounded-lg border p-6 shadow-sm my-8">
+            <AuditReport date="May 02, 2025" pages={5} />
+          </div>
           
-          <TokenList tokens={TOKENS} />
+          <div className="bg-card rounded-lg border p-6 shadow-sm my-8">
+            <TokenList tokens={TOKENS} />
+          </div>
           
-          <Footnotes notes={FOOTNOTES} />
+          <div className="bg-card rounded-lg border p-6 shadow-sm my-8">
+            <Footnotes notes={FOOTNOTES} />
+          </div>
         </div>
       </div>
     </ThemeProvider>

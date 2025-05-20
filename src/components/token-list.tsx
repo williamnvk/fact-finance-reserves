@@ -55,21 +55,21 @@ export function TokenList({ tokens }: TokenListProps) {
       
       <div className="space-y-4">
         {tokens.map(token => (
-          <div key={token.id} className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg border border-gray-200 p-6 shadow-sm">
+          <div key={token.id} className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
             <div className="flex flex-col md:flex-row gap-6">
               <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 font-bold mr-4">
+                <div className="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 border-4 border-gray-200 dark:border-gray-600 flex items-center justify-center text-gray-700 dark:text-gray-300 font-bold mr-4">
                   {token.logo}
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-800">{token.symbol}</h3>
-                  <p className="text-sm text-gray-600">{token.name}</p>
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100">{token.symbol}</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{token.name}</p>
                 </div>
               </div>
               
               <div className="flex items-center gap-2 ml-auto">
                 {token.chains.map(chain => (
-                  <div key={chain} className="bg-gray-100 rounded-full p-1">
+                  <div key={chain} className="bg-gray-100 dark:bg-gray-700 rounded-full p-1">
                     {chainIcons[chain.toLowerCase()] || chain}
                   </div>
                 ))}
@@ -78,28 +78,28 @@ export function TokenList({ tokens }: TokenListProps) {
             
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
               <div>
-                <p className="subtitle">Tokens in Circulation</p>
-                <p className="value-medium text-gray-800">{token.circulation.amount.toLocaleString()} {token.circulation.symbol}</p>
+                <p className="subtitle dark:text-gray-400">Tokens in Circulation</p>
+                <p className="value-medium text-gray-800 dark:text-gray-100">{token.circulation.amount.toLocaleString()} {token.circulation.symbol}</p>
               </div>
               <div>
-                <p className="subtitle">Collateral in Custody <CircleCheck size={14} className="inline ml-1 text-gray-600" /></p>
-                <p className="value-medium text-gray-800">{token.collateral.amount.toLocaleString()} {token.collateral.symbol}</p>
+                <p className="subtitle dark:text-gray-400">Collateral in Custody <CircleCheck size={14} className="inline ml-1 text-gray-600 dark:text-gray-400" /></p>
+                <p className="value-medium text-gray-800 dark:text-gray-100">{token.collateral.amount.toLocaleString()} {token.collateral.symbol}</p>
               </div>
               <div>
-                <p className="subtitle">Collateral Value</p>
-                <p className="value-medium text-gray-800">{token.collateralValue}</p>
+                <p className="subtitle dark:text-gray-400">Collateral Value</p>
+                <p className="value-medium text-gray-800 dark:text-gray-100">{token.collateralValue}</p>
               </div>
               <div className="flex flex-col items-start md:items-end">
-                <p className="subtitle">Reserve Ratio</p>
+                <p className="subtitle dark:text-gray-400">Reserve Ratio</p>
                 <div className="flex items-center">
-                  <p className="value-medium mr-2 text-gray-800">{token.reserveRatio.toFixed(2)}%</p>
-                  <Shield size={20} className="text-gray-500" />
+                  <p className="value-medium mr-2 text-gray-800 dark:text-gray-100">{token.reserveRatio.toFixed(2)}%</p>
+                  <Shield size={20} className="text-gray-500 dark:text-gray-400" />
                 </div>
                 <a 
                   href={`https://etherscan.io/address/${token.oracleContract}`} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-xs text-gray-600 hover:underline mt-1"
+                  className="text-xs text-gray-600 dark:text-gray-400 hover:underline mt-1"
                 >
                   {getShortenedAddress(token.oracleContract)}
                 </a>
