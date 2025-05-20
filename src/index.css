@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 210 100% 50%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -34,34 +35,30 @@
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    --chart-blue: 210 100% 60%;
+    --chart-navy: 220 80% 25%;
+    --chart-light-blue: 200 90% 85%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Custom colors for asset types */
+    --asset-cash: 142 76% 60%;
+    --asset-bonds: 217 70% 50%;
+    --asset-metals: 271 80% 60%;
+    --asset-bitcoin: 35 100% 50%;
+    --asset-investments: 200 80% 40%;
+    --asset-loans: 195 100% 50%;
   }
 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 222.2 70% 8%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 222.2 70% 8%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 210 100% 50%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -79,14 +76,18 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --chart-blue: 210 80% 50%;
+    --chart-navy: 220 70% 30%;
+    --chart-light-blue: 200 70% 50%;
+
+    /* Custom colors for asset types - slightly adjusted for dark mode */
+    --asset-cash: 142 76% 50%;
+    --asset-bonds: 217 70% 50%;
+    --asset-metals: 271 80% 60%;
+    --asset-bitcoin: 35 100% 50%;
+    --asset-investments: 200 80% 40%;
+    --asset-loans: 195 100% 50%;
   }
 }
 
@@ -98,4 +99,66 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.badge {
+  @apply inline-flex items-center justify-center px-4 py-1 text-xs font-medium rounded-full;
+}
+
+.badge-primary {
+  @apply bg-primary/10 text-primary;
+}
+
+.card-dashboard {
+  @apply bg-card text-card-foreground rounded-lg border shadow-sm p-6;
+}
+
+.value-large {
+  @apply text-4xl font-bold;
+}
+
+.value-medium {
+  @apply text-2xl font-semibold;
+}
+
+.subtitle {
+  @apply text-sm text-muted-foreground;
+}
+
+/* Chart legend colors */
+.legend-circulation {
+  @apply bg-[hsl(var(--chart-blue))];
+}
+
+.legend-reserves {
+  @apply bg-[hsl(var(--chart-navy))];
+}
+
+.legend-cash {
+  @apply bg-[hsl(var(--chart-light-blue))];
+}
+
+/* Asset type colors */
+.asset-cash {
+  @apply bg-[hsl(var(--asset-cash))];
+}
+
+.asset-bonds {
+  @apply bg-[hsl(var(--asset-bonds))];
+}
+
+.asset-metals {
+  @apply bg-[hsl(var(--asset-metals))];
+}
+
+.asset-bitcoin {
+  @apply bg-[hsl(var(--asset-bitcoin))];
+}
+
+.asset-investments {
+  @apply bg-[hsl(var(--asset-investments))];
+}
+
+.asset-loans {
+  @apply bg-[hsl(var(--asset-loans))];
 }
