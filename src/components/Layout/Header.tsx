@@ -75,6 +75,9 @@ export const Header: FC<HeaderProps> = () => {
             <Button as={NavLink} to="/about" variant="navbar">
               About Us
             </Button>
+            <Button as={NavLink} to="/" variant="navbar">
+              Proof of Reserve
+            </Button>
           </HStack>
 
           <Button
