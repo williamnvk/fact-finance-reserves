@@ -28,16 +28,28 @@ export const WhyChooseUseSection = () => {
           {/* Stats */}
           <SimpleGrid columns={{ base: 1, md: 3 }} gap={8} mb={20} maxW="2xl" mx="auto">
             <VStack gap={2}>
-              <Text fontSize="3xl" fontWeight="bold" color="cyan.300">15+</Text>
-              <Text fontSize="sm" color="gray.400">Blockchains</Text>
+              <Text fontSize="3xl" fontWeight="bold" color="cyan.300">
+                15+
+              </Text>
+              <Text fontSize="sm" color="gray.400">
+                Blockchains
+              </Text>
             </VStack>
             <VStack gap={2}>
-              <Text fontSize="3xl" fontWeight="bold" color="green.300">99.9%</Text>
-              <Text fontSize="sm" color="gray.400">Oracle Uptime</Text>
+              <Text fontSize="3xl" fontWeight="bold" color="success.300">
+                99.9%
+              </Text>
+              <Text fontSize="sm" color="gray.400">
+                Oracle Uptime
+              </Text>
             </VStack>
             <VStack gap={2}>
-              <Text fontSize="3xl" fontWeight="bold" color="blue.300">&lt;3s</Text>
-              <Text fontSize="sm" color="gray.400">Data Latency</Text>
+              <Text fontSize="3xl" fontWeight="bold" color="brand.300">
+                &lt;3s
+              </Text>
+              <Text fontSize="sm" color="gray.400">
+                Data Latency
+              </Text>
             </VStack>
           </SimpleGrid>
 
@@ -47,45 +59,37 @@ export const WhyChooseUseSection = () => {
               <Heading size="lg" color="white" mb={4}>
                 Key Features
               </Heading>
-              
+
               <VStack gap={6} align="flex-start" w="full">
                 {[
                   {
                     icon: Network,
                     title: 'Decentralized Network',
-                    description: 'Multi-node architecture prevents single points of failure'
+                    description: 'Multi-node architecture prevents single points of failure',
                   },
                   {
                     icon: Code,
                     title: 'Smart Contract Integration',
-                    description: 'Native integration with DeFi protocols'
+                    description: 'Native integration with DeFi protocols',
                   },
                   {
                     icon: Shield,
                     title: 'Cryptographic Proofs',
-                    description: 'Zero-knowledge proofs ensure data authenticity'
+                    description: 'Zero-knowledge proofs ensure data authenticity',
                   },
                   {
                     icon: Database,
                     title: 'Multi-Chain Support',
-                    description: 'Cross-chain verification on 15+ networks'
+                    description: 'Cross-chain verification on 15+ networks',
                   },
                   {
                     icon: Zap,
                     title: 'Real-Time Updates',
-                    description: 'Sub-second reserve ratio updates'
-                  }
+                    description: 'Sub-second reserve ratio updates',
+                  },
                 ].map((feature, index) => (
                   <HStack key={index} gap={4} align="flex-start" w="full">
-                    <Flex
-                      align="center"
-                      justify="center"
-                      w={10}
-                      h={10}
-                      bg="gray.900"
-                      rounded="lg"
-                      flexShrink={0}
-                    >
+                    <Flex align="center" justify="center" w={10} h={10} bg="gray.900" rounded="lg" flexShrink={0}>
                       <Icon as={feature.icon} boxSize={5} color="gray.300" />
                     </Flex>
                     <VStack align="flex-start" gap={1} flex={1}>
@@ -99,55 +103,6 @@ export const WhyChooseUseSection = () => {
                   </HStack>
                 ))}
               </VStack>
-            </VStack>
-
-            {/* Right Side - Comparison */}
-            <VStack gap={8} align="stretch">
-              <Heading size="lg" color="white" mb={4}>
-                Oracle vs Traditional
-              </Heading>
-
-              <VStack gap={4} align="stretch">
-                {[
-                  {
-                    feature: 'Data Integrity',
-                    oracle: 'Cryptographically Verified',
-                    traditional: 'Trust-Based'
-                  },
-                  {
-                    feature: 'Availability',
-                    oracle: 'Decentralized',
-                    traditional: 'Single Point'
-                  },
-                  {
-                    feature: 'Smart Contracts',
-                    oracle: 'Native Integration',
-                    traditional: 'Requires Bridge'
-                  },
-                  {
-                    feature: 'Updates',
-                    oracle: 'Real-time',
-                    traditional: 'Periodic'
-                  },
-                  {
-                    feature: 'Transparency',
-                    oracle: 'Fully Auditable',
-                    traditional: 'Black Box'
-                  }
-                ].map((row, index) => (
-                  <Grid key={index} templateColumns="1fr 1fr 1fr" gap={4} py={3}>
-                    <Text color="gray.300" fontSize="sm" fontWeight="medium">
-                      {row.feature}
-                    </Text>
-                    <Text color="green.300" fontSize="sm" textAlign="center">
-                      {row.oracle}
-                    </Text>
-                    <Text color="red.300" fontSize="sm" textAlign="center">
-                      {row.traditional}
-                    </Text>
-                  </Grid>
-                ))}
-              </VStack>
 
               {/* Technical Specs */}
               <VStack gap={4} align="flex-start" mt={8}>
@@ -157,14 +112,14 @@ export const WhyChooseUseSection = () => {
                     Technical Specs
                   </Text>
                 </HStack>
-                
+
                 <VStack gap={2} w="full" align="flex-start">
                   {[
                     'Chainlink-compatible interface',
                     'EVM and non-EVM support',
                     'Merkle proof verification',
                     'Automated node slashing',
-                    'Gas-optimized aggregation'
+                    'Gas-optimized aggregation',
                   ].map((spec, index) => (
                     <HStack key={index} gap={3}>
                       <CheckCircle size={14} color="#10B981" />
@@ -176,22 +131,109 @@ export const WhyChooseUseSection = () => {
                 </VStack>
               </VStack>
             </VStack>
+
+            {/* Right Side - Enhanced Comparison Table */}
+            <VStack gap={8} align="stretch">
+              {/* Comparison Table with White Background */}
+              <Box bg="white" rounded="xl" p={8} shadow="2xl" border="1px solid" borderColor="gray.200">
+                <VStack gap={6} align="stretch">
+                  <VStack gap={2} textAlign="center" mb={4}>
+                    <Heading size="lg" color="gray.900">
+                      Oracle vs Traditional Data
+                    </Heading>
+                    <Text fontSize="sm" color="gray.600">
+                      Why blockchain oracles are superior
+                    </Text>
+                  </VStack>
+
+                  {/* Table Header */}
+                  <Grid templateColumns="1fr 1fr 1fr" gap={4}>
+                    <Text fontWeight="bold" color="gray.700" fontSize="sm" textAlign="left">
+                      Feature
+                    </Text>
+                    <Text fontWeight="bold" color="success.600" fontSize="sm" textAlign="left">
+                      Fact Finance Oracle
+                    </Text>
+                    <Text fontWeight="bold" color="gray.700" fontSize="sm" textAlign="left">
+                      Traditional APIs
+                    </Text>
+                  </Grid>
+
+                  {/* Comparison Rows */}
+                  <VStack gap={0} align="stretch" color="blackAlpha.900" borderTop="1px solid" borderColor="gray.200" pt={4}>
+                    {[
+                      {
+                        feature: 'Data Integrity',
+                        oracle: 'Cryptographically Verified',
+                        traditional: 'Trust-Based',
+                      },
+                      {
+                        feature: 'Availability',
+                        oracle: 'Decentralized Network',
+                        traditional: 'Single Point of Failure',
+                      },
+                      {
+                        feature: 'Smart Contracts',
+                        oracle: 'Native Integration',
+                        traditional: 'Requires Bridge',
+                      },
+                      {
+                        feature: 'Update Frequency',
+                        oracle: 'Real-time On-Chain',
+                        traditional: 'Periodic Off-Chain',
+                      },
+                      {
+                        feature: 'Transparency',
+                        oracle: 'Fully Auditable',
+                        traditional: 'Black Box',
+                      },
+                      {
+                        feature: 'Censorship Resistance',
+                        oracle: 'Decentralized',
+                        traditional: 'Centralized Control',
+                      },
+                    ].map((row, index) => (
+                      <Grid key={index} templateColumns="1fr 1fr 1fr" gap={4} borderBottom="1px solid" borderColor="gray.200" py={4}>
+                        <Text color="gray.800" fontSize="sm">
+                          {row.feature}
+                        </Text>
+                        <Text flex={1} color="success.700" fontSize="sm" fontWeight="semibold">
+                          {row.oracle}
+                        </Text>
+                        <Text flex={1} fontSize="sm" fontWeight="semibold">
+                          {row.traditional}
+                        </Text>
+                      </Grid>
+                    ))}
+                  </VStack>
+
+                  {/* Bottom Summary */}
+                  <Box bg="brand.50" p={4} rounded="lg" border="1px solid" borderColor="brand.200" mt={4}>
+                    <Text fontSize="sm" color="brand.800" textAlign="center" fontWeight="medium">
+                      Fact.Finance Oracle provides superior reliability, transparency, and security
+                    </Text>
+                  </Box>
+                </VStack>
+              </Box>
+            </VStack>
           </Grid>
 
           {/* Bottom Integration Section */}
           <VStack gap={8} mt={20} textAlign="center">
-            <Heading size="xl" color="white">
+            <Heading size="xl" color="white" fontWeight="light">
               Simple Integration
             </Heading>
             <Text fontSize="lg" color="gray.400" maxW="xl">
               Deploy with just a few lines of code
             </Text>
-            
+
             {/* Code Example */}
             <Box bg="gray.900" p={6} rounded="lg" maxW="xl" w="full">
-              <Text fontSize="sm" color="gray.400" mb={4}>Solidity:</Text>
-              <Box as="pre" fontSize="xs" color="green.300" textAlign="left" overflow="auto">
-{`import "@factfinance/oracle/contracts/IFactOracle.sol";
+              <Text fontSize="sm" color="gray.400" mb={4}>
+                Solidity:
+              </Text>
+              <Box as="pre" fontSize="xs" color="success.300" textAlign="left" overflow="auto">
+                {`import "@factfinance/oracle/contracts/IFactOracle.sol";
 
 contract YourProtocol {
     IFactOracle public factOracle;
@@ -207,15 +249,21 @@ contract YourProtocol {
             <HStack gap={6} justify="center" flexWrap="wrap" mt={6}>
               <HStack gap={2}>
                 <CheckCircle size={16} color="#10B981" />
-                <Text fontSize="sm" color="gray.300">Chainlink Compatible</Text>
+                <Text fontSize="sm" color="gray.300">
+                  Chainlink Compatible
+                </Text>
               </HStack>
               <HStack gap={2}>
                 <Shield size={16} color="#3B82F6" />
-                <Text fontSize="sm" color="gray.300">Audited Contracts</Text>
+                <Text fontSize="sm" color="gray.300">
+                  Audited Contracts
+                </Text>
               </HStack>
               <HStack gap={2}>
                 <Network size={16} color="#8B5CF6" />
-                <Text fontSize="sm" color="gray.300">Multi-Chain</Text>
+                <Text fontSize="sm" color="gray.300">
+                  Multi-Chain
+                </Text>
               </HStack>
             </HStack>
           </VStack>
