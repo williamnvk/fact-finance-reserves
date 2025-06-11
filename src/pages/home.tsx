@@ -86,7 +86,7 @@ const Home = () => {
       <Center>
         <VStack gap={6}>
           <Box position="relative">
-            <Spinner size="xl" color="blue.500" />
+            <Spinner size="xl" color="brand.500" />
             <Box position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)">
               <Shield size={24} color="#3182CE" />
             </Box>
@@ -161,9 +161,9 @@ const Home = () => {
               <Sparkles size={16} style={{ marginRight: '8px' }} />
               Our Clients: Real-Time Proof of Reserve
             </Badge>
-            <Heading fontSize="4xl" textAlign="center" maxW="xl">
+            <Heading fontSize="5xl" textAlign="center" fontWeight="light" maxW="4xl" lineHeight="1.2"> 
               Continuous verification for{' '}
-              <Text as="span" bgImage="linear-gradient(35deg, {colors.brand.500}, {colors.brand.400})" bgClip="text">
+              <Text as="span" fontWeight="bold" bgImage="linear-gradient(35deg, {colors.brand.500}, {colors.brand.400})" bgClip="text">
                 leading tokenized assets
               </Text>
             </Heading>
@@ -190,7 +190,7 @@ const Home = () => {
                   _hover={{
                     shadow: '2xl',
                     transform: 'translateY(-4px)',
-                    borderColor: 'blue.200',
+                    borderColor: 'brand.200',
                   }}
                   transition="all 0.3s"
                   bg="white"
@@ -232,7 +232,7 @@ const Home = () => {
                             <Stat.Label color="gray.500" fontSize="sm">
                               Total Reserves
                             </Stat.Label>
-                            <Stat.ValueText fontSize="2xl" fontWeight="bold" color="green.600">
+                            <Stat.ValueText fontSize="2xl" fontWeight="bold" color="success.600">
                               ${formatLargeNumber(latestData.reserves)}
                             </Stat.ValueText>
                             <Stat.HelpText color="gray.400" fontSize="xs">
@@ -255,7 +255,7 @@ const Home = () => {
                             <Stat.Label color="gray.500" fontSize="sm">
                               Reserve Ratio
                             </Stat.Label>
-                            <Stat.ValueText fontSize="2xl" fontWeight="bold" color="blue.600">
+                            <Stat.ValueText fontSize="2xl" fontWeight="bold" color="brand.600">
                               {reserveRatio}%
                             </Stat.ValueText>
                             <Stat.HelpText color="gray.400" fontSize="xs">
@@ -267,18 +267,48 @@ const Home = () => {
                       </Grid>
 
                       {/* Reserve Health Indicator */}
-                      <Box>
-                        <HStack justify="space-between" mb={2}>
-                          <Text fontSize="sm" color="gray.600">
-                            Reserve Health
-                          </Text>
-                          <Badge colorPalette="success" size="sm" variant="subtle">
+                       {/* Enhanced Reserve Health Indicator */}
+                       <Box
+                        p={5}
+                        bgImage="linear-gradient(35deg, {colors.gray.50}, {colors.gray.100})"
+                        rounded="xl"
+                        border="1px solid"
+                        borderColor="gray.200"
+                      >
+                        <HStack justify="space-between" mb={3}>
+                          <HStack gap={2}>
+                            <Box w={2} h={2} bg="success.500" rounded="full" />
+                            <Text fontSize="sm" color="gray.700" fontWeight="semibold">
+                              Reserve Health Status
+                            </Text>
+                          </HStack>
+                          <Badge colorPalette="success" size="sm" variant="solid" px={3}>
                             Excellent
                           </Badge>
                         </HStack>
-                        <Box w="full" bg="gray.200" rounded="full" h="2">
-                          <Box bg="green.500" h="2" rounded="full" w={`${reserveRatio}%`} transition="width 0.3s" />
+                        <Box w="full" bg="gray.300" rounded="full" h="3" overflow="hidden">
+                          <Box
+                            bg="gradient-to-r from-success.400 to-success.500"
+                            h="3"
+                            rounded="full"
+                            w={`${reserveRatio}%`}
+                            transition="width 0.6s ease-out"
+                            position="relative"
+                            _after={{
+                              content: '""',
+                              position: 'absolute',
+                              top: 0,
+                              left: 0,
+                              right: 0,
+                              bottom: 0,
+                              bg: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)',
+                              animation: 'shimmer 2s infinite',
+                            }}
+                          />
                         </Box>
+                        <Text fontSize="xs" color="gray.500" mt={2} textAlign="center">
+                          {reserveRatio}% of assets are fully backed by reserves
+                        </Text>
                       </Box>
 
                       <Separator />
@@ -319,7 +349,7 @@ const Home = () => {
 
                   <Card.Footer>
                     <Link to={client.companyName.toLowerCase()}>
-                      <Button variant="outline" size="lg" w="full" colorPalette="brand" _hover={{ bg: 'blue.50' }}>
+                      <Button variant="ghost" color="brand.800" size="lg" w="full" colorPalette="brand" _hover={{ bg: 'brand.50' }}>
                         View Complete Report
                         <ArrowRight size={16} style={{ marginLeft: '8px' }} />
                       </Button>
@@ -354,7 +384,7 @@ const Home = () => {
 
           <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }} gap={8}>
             <VStack gap={4} bg="whiteAlpha.50" p={8} rounded="lg" border="1px solid" borderColor="whiteAlpha.200">
-              <Box p={4} bg="blue.100" rounded="full">
+              <Box p={4} bg="brand.100" rounded="full">
                 <Icon as={Globe} boxSize={12} color="brand.500" />
               </Box>
               <Heading size="md">Direct Connection</Heading>
@@ -364,8 +394,8 @@ const Home = () => {
             </VStack>
 
             <VStack gap={4} bg="whiteAlpha.50" p={8} rounded="lg" border="1px solid" borderColor="whiteAlpha.200">
-              <Box p={4} bg="green.100" rounded="full">
-                <Icon as={Clock} boxSize={12} color="green.500" />
+              <Box p={4} bg="success.100" rounded="full">
+                <Icon as={Clock} boxSize={12} color="success.500" />
               </Box>
               <Heading size="md">24/7 Monitoring</Heading>
               <Text fontSize="sm" lineHeight="1.6">
