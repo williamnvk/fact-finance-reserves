@@ -1,3 +1,4 @@
+import { Box, List } from '@chakra-ui/react';
 
 interface FootnotesProps {
   notes: { id: string; text: string }[];
@@ -5,14 +6,14 @@ interface FootnotesProps {
 
 export function Footnotes({ notes }: FootnotesProps) {
   return (
-    <div className="mt-10 text-sm text-muted-foreground">
-      <ol className="list-decimal list-outside pl-5 space-y-2">
+    <Box mt={10} fontSize="sm" color="gray.600">
+      <List.Root as="ol" pl={5} gap={2}>
         {notes.map((note) => (
-          <li key={note.id} id={`footnote-${note.id}`}>
+          <List.Item key={note.id} id={`footnote-${note.id}`}>
             {note.text}
-          </li>
+          </List.Item>
         ))}
-      </ol>
-    </div>
+      </List.Root>
+    </Box>
   );
 }

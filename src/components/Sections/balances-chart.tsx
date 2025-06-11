@@ -1,36 +1,42 @@
-
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { formatLargeNumber } from '@/lib/utils';
+import { Box, Text, Flex, Heading, Stack } from '@chakra-ui/react';
 
-
-export function BalancesChart({  circulation, reserves, over, currency   }) {
-
+export function BalancesChart({ 
+  circulation, 
+  reserves, 
+  over, 
+  currency 
+}: {
+  circulation: number;
+  reserves: number;
+  over: number;
+  currency: string;
+}) {
   const data = [
     {
       name: 'Circulation',
       value: circulation,
-
     },
     {
       name: 'Reserves',
-      cashFunds: reserves-over,
+      cashFunds: reserves - over,
       cashBanks: over,
-
     }
   ];
 
   // Format for the tooltip
-  const formatValue = (value: number) =>  `${currency}${value}`;
+  const formatValue = (value: number) => `${currency}${value}`;
 
   // Custom tooltip with safety checks to avoid accessing undefined properties
   const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
       if (payload[0].name === "value") {
         return (
-          <div className="bg-card border p-3 shadow-sm rounded-md">
-            <p className="text-sm font-medium">Circulation</p>
-            <p className="text-sm text-primary">{formatLargeNumber(payload[0].value, currency)}</p>
-          </div>
+          <Box bg="white" border="1px solid" borderColor="gray.200" p={3} shadow="sm" borderRadius="md">
+            <Text fontSize="sm" fontWeight="medium">Circulation</Text>
+            <Text fontSize="sm" color="blue.600">{formatLargeNumber(payload[0].value, currency)}</Text>
+          </Box>
         );
       } else {
         // Safety check for the reserves data
@@ -39,12 +45,12 @@ export function BalancesChart({  circulation, reserves, over, currency   }) {
         const totalReserves = cashFundsValue + cashBanksValue;
 
         return (
-          <div className="bg-card border p-3 shadow-sm rounded-md">
-            <p className="text-sm font-medium">Reserves</p>
-            <p className="text-sm text-primary">{formatLargeNumber(totalReserves, currency)}</p>
-            <p className="text-xs text-muted-foreground mt-1">Funds: {formatLargeNumber(cashFundsValue, currency)}</p>
-            <p className="text-xs text-muted-foreground">Over collateral: {formatLargeNumber(cashBanksValue, currency)}</p>
-          </div>
+          <Box bg="white" border="1px solid" borderColor="gray.200" p={3} shadow="sm" borderRadius="md">
+            <Text fontSize="sm" fontWeight="medium">Reserves</Text>
+            <Text fontSize="sm" color="blue.600">{formatLargeNumber(totalReserves, currency)}</Text>
+            <Text fontSize="xs" color="gray.500" mt={1}>Funds: {formatLargeNumber(cashFundsValue, currency)}</Text>
+            <Text fontSize="xs" color="gray.500">Over collateral: {formatLargeNumber(cashBanksValue, currency)}</Text>
+          </Box>
         );
       }
     }
@@ -52,13 +58,17 @@ export function BalancesChart({  circulation, reserves, over, currency   }) {
   };
 
   return (
-    <div className="chart-card   p-6 shadow-sm rounded-md">
-      <div className='flex flex-col mb-5'>
-        <span className="text-2xl font-bold ">Current Balances</span>
-        <span className='text-sm text-gray-400 dark:text-gray-500'>Displays the current circulation of issued tokens and their corresponding reserves. The bar also visualizes any excess reserve available for minting new tokens.</span>
-      </div>
-      <div className="flex-none ">
-        <ResponsiveContainer width="100%" height={280}>
+    <Box bg="white" p={6} shadow="sm" borderRadius="md" border="1px solid" borderColor="gray.100">
+      <Stack gap={5} mb={5}>
+        <Heading size="xl" fontWeight="bold">Current Balances</Heading>
+        <Text fontSize="sm" color="gray.400">
+          Displays the current circulation of issued tokens and their corresponding reserves. 
+          The bar also visualizes any excess reserve available for minting new tokens.
+        </Text>
+      </Stack>
+      
+      <Box height="280px">
+        <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={data}
             margin={{ top: 10, right: 0, left: 0, bottom: 10 }}
@@ -68,7 +78,7 @@ export function BalancesChart({  circulation, reserves, over, currency   }) {
             <XAxis dataKey="name" tickLine={false} axisLine={false} />
             <YAxis
               tickFormatter={(value) => `${formatLargeNumber(value)}`}
-              domain={[0, reserves + over ]}
+              domain={[0, reserves + over]}
               ticks={[0, circulation, reserves]}
               width={90}
             />
@@ -77,44 +87,42 @@ export function BalancesChart({  circulation, reserves, over, currency   }) {
             <Bar
               dataKey="value"
               stackId="aligned"
-              fill='hsl(var(--chart-navy))'
+              fill='#2563eb'
               radius={[8, 8, 0, 0]}
               barSize={150}
-
             />
             <Bar
               dataKey="cashFunds"
               stackId="aligned"
-              fill='hsl(var(--chart-blue))'
+              fill='#3b82f6'
               radius={[0, 0, 0, 0]}
               barSize={150}
             />
             <Bar
               dataKey="cashBanks"
               stackId="aligned"
-              fill='hsl(var(--chart-light-blue))'
+              fill='#60a5fa'
               radius={[8, 8, 0, 0]}
               barSize={150}
-
             />
           </BarChart>
         </ResponsiveContainer>
-      </div>
+      </Box>
 
-      <div className="chart-legend">
-        <div className="flex items-center">
-          <div className="w-3 h-3 rounded-full legend-reserves mr-1"></div>
-          <span className="text-xs">Issued Tokens</span>
-        </div>
-        <div className="flex items-center">
-          <div className="w-3 h-3 rounded-full legend-circulation mr-1"></div>
-          <span className="text-xs">Collateral Reserve</span>
-        </div>
-        <div className="flex items-center">
-          <div className="w-3 h-3 rounded-full legend-cash mr-1"></div>
-          <span className="text-xs">Over Collateral</span>
-        </div>
-      </div>
-    </div>
+      <Flex justify="space-around" mt={4}>
+        <Flex align="center">
+          <Box w={3} h={3} borderRadius="full" bg="#2563eb" mr={1}></Box>
+          <Text fontSize="xs">Issued Tokens</Text>
+        </Flex>
+        <Flex align="center">
+          <Box w={3} h={3} borderRadius="full" bg="#3b82f6" mr={1}></Box>
+          <Text fontSize="xs">Collateral Reserve</Text>
+        </Flex>
+        <Flex align="center">
+          <Box w={3} h={3} borderRadius="full" bg="#60a5fa" mr={1}></Box>
+          <Text fontSize="xs">Over Collateral</Text>
+        </Flex>
+      </Flex>
+    </Box>
   );
 }

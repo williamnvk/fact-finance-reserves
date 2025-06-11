@@ -1,7 +1,15 @@
-
 import { ThemeSwitch } from './theme-switch';
 import { Link } from 'react-router';
-import { Avatar, Card } from '@chakra-ui/react';
+import { 
+  Avatar, 
+  Card, 
+  Box, 
+  Flex, 
+  Text, 
+  Heading, 
+  Badge, 
+  Stack
+} from '@chakra-ui/react';
 
 export function ReportHeader({
   currency,
@@ -33,104 +41,138 @@ export function ReportHeader({
   contractLink: string;
 }) {
   return (
-    <div className="space-y-6 ">
-      <div className="flex flex-col float-right absolute top-4 right-4">
+    <Stack gap={6}>
+      <Box position="absolute" top={4} right={4}>
         <ThemeSwitch />
-      </div>
-      <div className="flex items-center justify-center gap-2 mb-4">
-        <div className="text-1xl tracking-tight flex items-center gap-1 absolute top-4 left-4">
+      </Box>
+      
+      <Flex align="center" justify="center" gap={2} mb={4}>
+        <Box fontSize="xl" position="absolute" top={4} left={4}>
           <Link to="/">
-            <span className="secondary">Fact</span>
-            <span className="text-gray-300 dark:text-gray-400">&#10022;</span>
-            <span className="secondary">Finance</span>
+            <Text as="span" color="fg.muted">Fact</Text>
+            <Text as="span" color="gray.300" mx={1}>&#10022;</Text>
+            <Text as="span" color="fg.muted">Finance</Text>
           </Link>
-        </div>
+        </Box>
 
-        <h1 className="text-3xl font-bold text-center">Proof of Reserves Report </h1>
-      </div>
-      <Card className="p-6 border-0">
-        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-4">
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-4 mb-4 md:mb-0">
-            <Avatar.Root className="w-32 h-32 rounded-full overflow-hidden bg-gray-200 dark:bg-gray-800 p-4">
-              <Avatar.Image src={logo} alt={companyName} className="object-contain " />
-              <Avatar.Fallback className="bg-gray-100 dark:bg-gray-700 text-xl font-bold">
+        <Heading size="2xl" textAlign="center">
+          Proof of Reserves Report
+        </Heading>
+      </Flex>
+
+      <Card.Root p={6} borderWidth={0}>
+        <Flex 
+          direction={{ base: "column", md: "row" }} 
+          align={{ base: "center", md: "start" }} 
+          justify="between" 
+          gap={4}
+        >
+          <Flex 
+            direction={{ base: "column", md: "row" }} 
+            align={{ base: "center", md: "start" }} 
+            gap={4} 
+            mb={{ base: 4, md: 0 }}
+          >
+            <Avatar.Root size="2xl" bg="gray.200" p={4}>
+              <Avatar.Image src={logo} alt={companyName} />
+              <Avatar.Fallback fontSize="xl" fontWeight="bold">
                 {companyName.substring(0, 2).toUpperCase()}
               </Avatar.Fallback>
             </Avatar.Root>
 
-            <div className="text-center  md:text-left">
-              <div className="mt-4">
-                <p className="text-xl font-medium text-gray-700 dark:text-gray-300 ">
-                  {companyName}
-                  <span className="inline-flex items-center rounded-md bg-green-50 dark:bg-gray-900 px-2 py-1 text-xs font-medium text-green-600 ring-1 ring-green-600/20 ring-inset ml-2">
-                    {' '}
-                    Verified{' '}
-                  </span>
-                </p>
-                <span className=" my-2 text-sm text-gray-400 dark:text-gray-500 ">
-                  {' '}
-                  {description}
-                  <br />
-                  {dappLink ? (
-                    <a href={dappLink} target="_blank" className="hover:underline text-xs  ">
-                      dApp: {dappLink}
-                    </a>
-                  ) : null}
-                  <br />
-                  {contract ? (
-                    <a
-                      href={contractLink}
-                      target="_blank"
-                      className="text-gray-400 dark:text-gray-500 text-xs hover:underline"
-                    >
-                      Contract: {contract} &lt;/&gt;
-                    </a>
-                  ) : null}
-                </span>
-              </div>
-            </div>
-          </div>
+            <Stack align={{ base: "center", md: "start" }} textAlign={{ base: "center", md: "left" }}>
+              <Box mt={4}>
+                <Flex align="center" gap={2}>
+                  <Text fontSize="xl" fontWeight="medium" color="gray.700">
+                    {companyName}
+                  </Text>
+                  <Badge 
+                    bg="green.50" 
+                    color="green.600" 
+                    fontSize="xs" 
+                    fontWeight="medium"
+                    px={2} 
+                    py={1}
+                    borderRadius="md"
+                  >
+                    Verified
+                  </Badge>
+                </Flex>
+                
+                <Stack gap={2} mt={2}>
+                  <Text fontSize="sm" color="gray.400">
+                    {description}
+                  </Text>
+                  {dappLink && (
+                    <Text fontSize="xs" color="gray.400">
+                      dApp: <a href={dappLink} target="_blank" style={{ textDecoration: "underline" }}>
+                        {dappLink}
+                      </a>
+                    </Text>
+                  )}
+                  {contract && (
+                    <Text fontSize="xs" color="gray.400">
+                      Contract: <a href={contractLink} target="_blank" style={{ textDecoration: "underline" }}>
+                        {contract} &lt;/&gt;
+                      </a>
+                    </Text>
+                  )}
+                </Stack>
+              </Box>
+            </Stack>
+          </Flex>
 
-          <div className="flex flex-col items-end mt-8 whitespace-nowrap">
-            <div className="flex flex-col-2 align-center  flex-row with-full justify-center gap-10  ">
-              <div className="flex flex-col items-center">
-                <p className="subtitle whitespace-nowrap">Issued Tokens</p>
-                <h3 className="value-medium text-[hsl(var(--chart-navy))]">
-                  <span className="text-xs">{currency}&nbsp;</span>
+          <Stack align="end" mt={8} gap={4}>
+            <Flex gap={10} justify="center" w="full">
+              <Stack align="center">
+                <Text fontSize="sm" color="fg.muted">
+                  Issued Tokens
+                </Text>
+                <Heading size="lg" color="blue.600">
+                  <Text as="span" fontSize="xs">{currency}&nbsp;</Text>
                   {circulation}
-                </h3>
-              </div>
-              <div className="flex flex-col items-center">
-                <p className="subtitle">Reserves</p>
-                <h3 className="value-medium text-[hsl(var(--chart-blue))]">
-                  <span className="text-xs">{currency}&nbsp;</span>
+                </Heading>
+              </Stack>
+              
+              <Stack align="center">
+                <Text fontSize="sm" color="fg.muted">
+                  Reserves
+                </Text>
+                <Heading size="lg" color="blue.500">
+                  <Text as="span" fontSize="xs">{currency}&nbsp;</Text>
                   {reserves}
-                </h3>
-              </div>
-              <div className="flex flex-col items-center">
-                <p className="subtitle whitespace-nowrap">Collateral Ratio</p>
-                <h3 className="value-medium text-green-500">{ratio}</h3>
-              </div>
-            </div>
+                </Heading>
+              </Stack>
+              
+              <Stack align="center">
+                <Text fontSize="sm" color="fg.muted">
+                  Collateral Ratio
+                </Text>
+                <Heading size="lg" color="green.500">
+                  {ratio}
+                </Heading>
+              </Stack>
+            </Flex>
 
-            <span className="text-xs text-gray-400 dark:text-gray-400 mt-4 ">{dateAs}</span>
-            <span className="flex items-center gap-1 pb-4 text-gray-400 dark:text-gray-500 text-xs">
-              {heartbeat ? (
-                <>
-                  {' '}
-                  Heartbeat<sup>2</sup>: <b>{heartbeat}</b>
-                </>
-              ) : null}
-              {threshold ? (
-                <>
-                  {' '}
-                  Deviation Threshold<sup>3</sup>: <b>{threshold}</b>{' '}
-                </>
-              ) : null}
-            </span>
-          </div>
-        </div>
-      </Card>
-    </div>
+            <Text fontSize="xs" color="gray.400" mt={4}>
+              {dateAs}
+            </Text>
+            
+            <Flex fontSize="xs" color="gray.400" pb={4} gap={4}>
+              {heartbeat && (
+                <Text>
+                  Heartbeat<Text as="sup">2</Text>: <Text as="b">{heartbeat}</Text>
+                </Text>
+              )}
+              {threshold && (
+                <Text>
+                  Deviation Threshold<Text as="sup">3</Text>: <Text as="b">{threshold}</Text>
+                </Text>
+              )}
+            </Flex>
+          </Stack>
+        </Flex>
+      </Card.Root>
+    </Stack>
   );
 }

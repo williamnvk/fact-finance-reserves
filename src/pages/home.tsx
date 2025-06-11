@@ -143,7 +143,8 @@ const Home = () => {
                       </Flex>
                     </VStack>
 
-                    <ChakraLink as={Link} href={client.companyName.toLowerCase()}>
+                    {/* @ts-ignore */}
+                    <ChakraLink as={Link} to={client.companyName.toLowerCase()}>
                       <Button variant="outline" size="md" w="full">
                         View Reserve Details <ArrowRight size={16} />
                       </Button>
