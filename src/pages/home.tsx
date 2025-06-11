@@ -130,7 +130,7 @@ const Home = () => {
         h="100vh"
         bg="white"
         _dark={{
-          bg: 'brand.950',
+          bg: 'black',
           bgImage: "linear-gradient(35deg, {colors.brand.800}, transparent)"
         }}
         bgImage="linear-gradient(35deg, {colors.brand.500}, {colors.brand.100})"

@@ -51,13 +51,13 @@ export const FAQSection = () => {
               <HelpCircle size={16} style={{ marginRight: '8px' }} />
               Frequently Asked Questions
             </Badge>
-            <Heading fontSize="3xl" maxW="2xl">
+            <Heading fontSize="4xl" maxW="2xl" lineHeight="1.2">
               Everything You Need to Know About{' '}
               <Text as="span" bgImage="linear-gradient(35deg, {colors.brand.500}, {colors.brand.400})" bgClip="text">
                 Proof of Reserves
               </Text>
             </Heading>
-            <Text fontSize="lg" maxW="3xl" color="gray.600">
+            <Text fontSize="lg" maxW="1xl">
               Get answers to the most common questions about our real-time audit platform
             </Text>
           </VStack>
