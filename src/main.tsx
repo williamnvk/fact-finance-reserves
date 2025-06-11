@@ -6,7 +6,7 @@ import { Provider as ChakraProvider } from '@/components/ui/provider';
 import { BaseLayout } from './components/Layout/Layout';
 import { HelmetProvider } from 'react-helmet-async';
 import Home from './pages/home';
-import Index from './pages/index';
+import Index from './pages/_index';
 import NotFound from './pages/NotFound';
 import '@fontsource/lato/index.css';
 import ReactGA from 'react-ga4';
