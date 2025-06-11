@@ -1,0 +1,191 @@
+{
+  "currency": "R$",
+  "companyName": "Tokeniza",
+  "companyFullName": "tBRL - Tokenized Brazilian Real",
+  "logo": "/logos/tokeniza.png",
+  "description":"O tBRL é uma stablecoin pareada 1:1 com o real brasileiro (BRL), emitida pela Tokeniza, com lastro integral em contas bancárias segregadas e integração total ao sistema financeiro nacional via Pix. Sua proposta é criar uma ponte segura, transparente e automatizada entre o real e o ecossistema blockchain, promovendo liquidez, rastreabilidade e usabilidade on-chain.",
+  "heartbeat": "1 hour",
+  "historicalData": [
+    {
+      "date": "30 Maio 2025",
+      "circulation": 20000,
+      "reserves": 35622
+    },
+    {
+      "date": "2 Junho 2025",
+      "circulation": 26727,
+      "reserves": 72240.82
+    },
+    {
+      "date": "3 Junho 2025",
+      "circulation": 130355,
+      "reserves": 135420.74
+    },
+    { "date": "04 Jun 2025", "circulation": 93126, "reserves": 105433.83 }
+  ],
+  
+  "historicalData0": [
+    {
+      "date": "02 Jun 2025 22:00",
+      "circulation": 130355,
+      "reserves": 135420.74
+    },
+    {
+      "date": "03 Jun 2025 00:00",
+      "circulation": 125397,
+      "reserves": 130464.67
+    },
+    {
+      "date": "03 Jun 2025 01:00",
+      "circulation": 125397,
+      "reserves": 130464.67
+    },
+    {
+      "date": "03 Jun 2025 02:00",
+      "circulation": 125397,
+      "reserves": 130464.67
+    },
+    {
+      "date": "03 Jun 2025 03:00",
+      "circulation": 125397,
+      "reserves": 130464.67
+    },
+    {
+      "date": "03 Jun 2025 04:00",
+      "circulation": 125397,
+      "reserves": 130464.67
+    },
+    {
+      "date": "03 Jun 2025 05:00",
+      "circulation": 125397,
+      "reserves": 130464.67
+    },
+    {
+      "date": "03 Jun 2025 06:00",
+      "circulation": 125397,
+      "reserves": 130464.67
+    },
+    {
+      "date": "03 Jun 2025 07:00",
+      "circulation": 125397,
+      "reserves": 130464.67
+    },
+    {
+      "date": "03 Jun 2025 08:00",
+      "circulation": 125397,
+      "reserves": 130464.67
+    },
+    {
+      "date": "03 Jun 2025 09:00",
+      "circulation": 124717,
+      "reserves": 129784.63
+    },
+    {
+      "date": "03 Jun 2025 10:00",
+      "circulation": 124717,
+      "reserves": 129784.63
+    },
+    {
+      "date": "03 Jun 2025 11:00",
+      "circulation": 120836,
+      "reserves": 125905.06
+    },
+    {
+      "date": "03 Jun 2025 12:00",
+      "circulation": 118160,
+      "reserves": 124695.21
+    },
+    {
+      "date": "03 Jun 2025 13:00",
+      "circulation": 118160,
+      "reserves": 124695.21
+    },
+    {
+      "date": "03 Jun 2025 14:00",
+      "circulation": 118160,
+      "reserves": 124695.21
+    },
+    {
+      "date": "03 Jun 2025 15:00",
+      "circulation": 118160,
+      "reserves": 124695.21
+    },
+    {
+      "date": "03 Jun 2025 16:00",
+      "circulation": 117555,
+      "reserves": 124090.41
+    },
+        {
+      "date": "03 Jun 2025 17:00",
+      "circulation": 117555,
+      "reserves": 129790.41
+    },
+        {
+      "date": "03 Jun 2025 18:00",
+      "circulation": 95555,
+      "reserves": 107790.91
+    },
+            {
+      "date": "03 Jun 2025 19:00",
+      "circulation": 95555,
+      "reserves": 107790.91
+    },
+                {
+      "date": "03 Jun 2025 20:00",
+      "circulation": 95555,
+      "reserves": 107790.91
+    },
+    { "date": "03 Jun 2025 21:00", "circulation": 95555, "reserves": 107790.91 },
+    { "date": "03 Jun 2025 22:00", "circulation": 95555, "reserves": 107790.91 },
+    { "date": "03 Jun 2025 23:00", "circulation": 95520, "reserves": 107756.83 },
+    { "date": "04 Jun 2025 00:00", "circulation": 95520, "reserves": 107756.83 },
+    { "date": "04 Jun 2025 01:00", "circulation": 95520, "reserves": 107756.83 },
+    { "date": "04 Jun 2025 02:00", "circulation": 95520, "reserves": 107756.83 },
+    { "date": "04 Jun 2025 03:00", "circulation": 95520, "reserves": 107756.83 },
+    { "date": "04 Jun 2025 04:00", "circulation": 95520, "reserves": 107756.83 },
+    { "date": "04 Jun 2025 05:00", "circulation": 95520, "reserves": 107756.83 },
+    { "date": "04 Jun 2025 06:00", "circulation": 95520, "reserves": 107756.83 },
+    { "date": "04 Jun 2025 07:00", "circulation": 95520, "reserves": 107756.83 },
+    { "date": "04 Jun 2025 08:00", "circulation": 95555, "reserves": 107826.83 },
+    { "date": "04 Jun 2025 09:00", "circulation": 94626, "reserves": 106933.33 },
+    { "date": "04 Jun 2025 10:00", "circulation": 93126, "reserves": 105433.83 },
+    { "date": "04 Jun 2025 11:00", "circulation": 93126, "reserves": 105433.83 }
+  ],
+
+  "tokens": [
+    {
+      "id": "1",
+      "logo": "/logos/tbrl.png",
+      "symbol": "tBRL",
+      "name": "Tokeniza Stable Coin",
+      "chains": [
+        "moonbeam"
+      ],
+      "circulation24h": 103700,
+      "tokenPrice": 1,
+      "marketcap": 130355,
+      "oracleContract": "",
+      "share": 100
+    }
+  ],
+  "assetDistribution": [
+    {
+      "type": "cash",
+      "name": " Cash and equivalents",
+      "value": 135420.74
+    }
+  ],
+  "chainDistribution": [
+    {
+      "name": "moonbeam",
+      "value": 100
+    }
+  ],
+  "reportList": [
+    {
+      "date": "May, 30 2025",
+      "file": "/reports/tokeniza/report_may_2025.pdf"
+    }
+  ]
+ 
+}

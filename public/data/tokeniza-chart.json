@@ -1,0 +1,86 @@
+{
+  "historical": [
+    {
+      "date": "30 May 2025",
+      "circulation": 0,
+      "reserves": 35622,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "02 Jun 2025",
+      "circulation": 125397,
+      "reserves": 135420.74,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "03 Jun 2025",
+      "circulation": 115828.67,
+      "reserves": 123778.01,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "04 Jun 2025",
+      "circulation": 93979,
+      "reserves": 105397.71,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "05 Jun 2025",
+      "circulation": 92483.04,
+      "reserves": 103266.79,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "06 Jun 2025",
+      "circulation": 93700.21,
+      "reserves": 104909.42,
+      "totalTransfer": 223,
+      "transactions": 5,
+      "totalBurned": 299.99999997
+    },
+    {
+      "date": "07 Jun 2025",
+      "circulation": 91950.13,
+      "reserves": 103161,
+      "totalTransfer": 0,
+      "transactions": 1,
+      "totalBurned": 199.99999998
+    },
+    {
+      "date": "08 Jun 2025",
+      "circulation": 90282.42,
+      "reserves": 101494.16,
+      "totalTransfer": 36,
+      "transactions": 2,
+      "totalBurned": 22
+    },
+    {
+      "date": "09 Jun 2025",
+      "circulation": 105853.38,
+      "reserves": 101426.44,
+      "totalTransfer": 347,
+      "transactions": 12,
+      "totalBurned": 229.49999999
+    }
+  ],
+  "total": {
+    "periodTotalTransfer": 606,
+    "periodTransactions": 20,
+    "periodTotalBurned": 751.49999994
+  },
+  "average": {
+    "circulation": 103904.8333,
+    "reserves": 106321.69846153846,
+    "avgcolateral": "100%"
+  }
+}

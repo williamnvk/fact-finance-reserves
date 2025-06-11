@@ -1,0 +1,49 @@
+{
+    "historical": [
+        {
+            "date": "31 Aug 2024",
+            "reserves": 3697000,
+            "circulation": 3059000
+        },
+        {
+            "date": "31 Dez 2024",
+            "reserves": 5851000,
+            "circulation": 5191000
+        },
+        {
+            "date": "01 Jan 2025",
+            "reserves": 5380000,
+            "circulation": 4330000
+        },
+        {
+            "date": "01 Feb 2025",
+            "reserves": 7112000,
+            "circulation": 6359000
+        },
+        {
+            "date": "01 Mar 2025",
+            "reserves": 5208000,
+            "circulation": 3777000
+        },
+        {
+            "date": "01 Apr 2025",
+            "reserves": 5208000,
+            "circulation": 3777000
+        },
+        {
+            "date": "01 May 2025",
+            "reserves": 5208000,
+            "circulation": 3777000
+        }
+    ],
+    "total": {
+        "periodTotalTransfer": 1000000,
+        "periodTransactions": 10000,
+        "periodTotalBurned": 0
+    },
+    "average": {
+        "circulation": 0,
+        "reserves": 0,
+        "avgcolateral": "100%"
+    }
+}

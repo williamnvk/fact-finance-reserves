@@ -1,0 +1,320 @@
+[
+  {
+    "Country": "Argentina",
+    "Code": "1001",
+    "Category": "Economics",
+    "SubCategory": "Inflation",
+    "Name": "CPI",
+    "ShortDesc": "undefined / CPI",
+    "Description": "The IPC measures the inflation in Argentina's consumer market.",
+    "Source": "INDEC",
+    "Frequency": "Monthly",
+    "Decimal": 2,
+    "License": "Free",
+    "Interfaces": [
+      "Push",
+      "dApp",
+      "Pull"
+    ]
+  },
+  {
+    "Country": "Argentina",
+    "Code": "1002",
+    "Category": "Economics",
+    "SubCategory": "Inflation",
+    "Name": "WPI",
+    "ShortDesc": "undefined / WPI",
+    "Description": "The IPIM measures wholesale price changes in Argentina.",
+    "Source": "INDEC",
+    "Frequency": "Monthly",
+    "Decimal": 2,
+    "License": "Free",
+    "Interfaces": [
+      "Push",
+      "dApp",
+      "Pull"
+    ]
+  },
+  {
+    "Country": "Argentina",
+    "Code": "1003",
+    "Category": "Economics",
+    "SubCategory": "GDP",
+    "Name": "GDP",
+    "ShortDesc": "undefined / GDP",
+    "Description": "The GDP measures the total value of goods and services produced in the country.",
+    "Source": "INDEC",
+    "Frequency": "Quarterly / Annual",
+    "Decimal": 2,
+    "License": "Free",
+    "Interfaces": [
+      "Push",
+      "dApp",
+      "Pull"
+    ]
+  },
+  {
+    "Country": "Brazil",
+    "Code": "1004",
+    "Category": "Economics",
+    "SubCategory": "GDP",
+    "Name": "GDP",
+    "ShortDesc": "undefined / GDP",
+    "Description": "The GDP measures the total value of goods and services produced in the country.",
+    "Source": "IBGE",
+    "Frequency": "Annual",
+    "Decimal": 2,
+    "License": "Free",
+    "Interfaces": [
+      "Push",
+      "dApp",
+      "Pull"
+    ]
+  },
+  {
+    "Country": "Brazil",
+    "Code": "1005",
+    "Category": "Economics",
+    "SubCategory": "Inflation",
+    "Name": "IPCA",
+    "ShortDesc": "undefined / IPCA",
+    "Description": "The IPCA measures the variation of prices in the consumer market.",
+    "Source": "IBGE",
+    "Frequency": "Monthly",
+    "Decimal": 2,
+    "License": "Free",
+    "Interfaces": [
+      "Push",
+      "dApp",
+      "Pull"
+    ]
+  },
+  {
+    "Country": "Brazil",
+    "Code": "1006",
+    "Category": "Economics",
+    "SubCategory": "Interest Rate",
+    "Name": "SELIC",
+    "ShortDesc": "undefined / SELIC",
+    "Description": "The SELIC rate is the basic interest rate of the Brazilian economy.",
+    "Source": "Banco Central do Brasil",
+    "Frequency": "Daily",
+    "Decimal": 2,
+    "License": "Free",
+    "Interfaces": [
+      "dApp"
+    ]
+  },
+  {
+    "Country": "Brazil",
+    "Code": "1007",
+    "Category": "Economics",
+    "SubCategory": "Inflation",
+    "Name": "IGPM",
+    "ShortDesc": "undefined / IGPM",
+    "Description": "The IGPM measures inflation in the general economy, including wholesale and real estate prices.",
+    "Source": "FGV",
+    "Frequency": "Monthly",
+    "Decimal": 2,
+    "License": "Free",
+    "Interfaces": [
+      "Push",
+      "dApp",
+      "Pull"
+    ]
+  },
+  {
+    "Country": "Brazil",
+    "Code": "1008",
+    "Category": "Economics",
+    "SubCategory": "Inflation",
+    "Name": "INPC",
+    "ShortDesc": "undefined / INPC",
+    "Description": "The INPC measures inflation for families earning up to 5 minimum wages.",
+    "Source": "IBGE",
+    "Frequency": "Monthly",
+    "Decimal": 2,
+    "License": "Free",
+    "Interfaces": [
+      "Push",
+      "dApp",
+      "Pull"
+    ]
+  },
+  {
+    "Country": "Brazil",
+    "Code": "1009",
+    "Category": "Economics",
+    "SubCategory": "Inflation",
+    "Name": "IPCA",
+    "ShortDesc": "undefined / IPCA",
+    "Description": "The IPCA measures the variation of prices in the consumer market for families earning 1-40 minimum wages.",
+    "Source": "IBGE",
+    "Frequency": "Monthly",
+    "Decimal": 2,
+    "License": "Free",
+    "Interfaces": [
+      "Push",
+      "dApp",
+      "Pull"
+    ]
+  },
+  {
+    "Country": "Brazil",
+    "Code": "1010",
+    "Category": "Economics",
+    "SubCategory": "Interest Rate",
+    "Name": "CDI",
+    "ShortDesc": "undefined / CDI",
+    "Description": "The CDI measures the interbank lending rate in Brazil, serving as a benchmark for fixed-income investments.",
+    "Source": "Brazilian Central Bank",
+    "Frequency": "Daily",
+    "Decimal": 2,
+    "License": "Free",
+    "Interfaces": [
+      "dApp"
+    ]
+  },
+  {
+    "Country": "Chile",
+    "Code": "1011",
+    "Category": "Economics",
+    "SubCategory": "Inflation",
+    "Name": "CPI",
+    "ShortDesc": "undefined / CPI",
+    "Description": "The CPI measures inflation in the Chilean consumer market.",
+    "Source": "INE",
+    "Frequency": "Monthly",
+    "Decimal": 2,
+    "License": "Free",
+    "Interfaces": [
+      "Push",
+      "dApp",
+      "Pull"
+    ]
+  },
+  {
+    "Country": "Chile",
+    "Code": "1012",
+    "Category": "Economics",
+    "SubCategory": "Interest Rate",
+    "Name": "TPM",
+    "ShortDesc": "undefined / TPM",
+    "Description": "The TPM is the monetary policy rate set by the Central Bank of Chile to influence economic stability.",
+    "Source": "Central Bank of Chile",
+    "Frequency": "Monthly",
+    "Decimal": 2,
+    "License": "Free",
+    "Interfaces": [
+      "Push",
+      "dApp",
+      "Pull"
+    ]
+  },
+  {
+    "Country": "Chile",
+    "Code": "1013",
+    "Category": "Economics",
+    "SubCategory": "GDP",
+    "Name": "GDP",
+    "ShortDesc": "undefined / GDP",
+    "Description": "The GDP measures the total value of goods and services produced in the country.",
+    "Source": "Central Bank of Chile",
+    "Frequency": "Quarterly / Annual",
+    "Decimal": 2,
+    "License": "Free",
+    "Interfaces": [
+      "Push",
+      "dApp",
+      "Pull"
+    ]
+  },
+  {
+    "Country": "Colombia",
+    "Code": "1014",
+    "Category": "Economics",
+    "SubCategory": "Inflation",
+    "Name": "CPI",
+    "ShortDesc": "undefined / CPI",
+    "Description": "The CPI measures inflation in the Colombian consumer market.",
+    "Source": "DANE",
+    "Frequency": "Monthly",
+    "Decimal": 2,
+    "License": "Free",
+    "Interfaces": [
+      "Push",
+      "dApp",
+      "Pull"
+    ]
+  },
+  {
+    "Country": "Colombia",
+    "Code": "1015",
+    "Category": "Economics",
+    "SubCategory": "Interest Rate",
+    "Name": "Policy Rate",
+    "ShortDesc": "undefined / Policy Rate",
+    "Description": "The policy rate is set by the Central Bank of Colombia to manage inflation and economic growth.",
+    "Source": "Central Bank of Colombia",
+    "Frequency": "Monthly",
+    "Decimal": 2,
+    "License": "Free",
+    "Interfaces": [
+      "Push",
+      "dApp",
+      "Pull"
+    ]
+  },
+  {
+    "Country": "Colombia",
+    "Code": "1016",
+    "Category": "Economics",
+    "SubCategory": "GDP",
+    "Name": "GDP",
+    "ShortDesc": "undefined / GDP",
+    "Description": "The GDP measures the total value of goods and services produced in the country.",
+    "Source": "DANE",
+    "Frequency": "Quarterly / Annual",
+    "Decimal": 2,
+    "License": "Free",
+    "Interfaces": [
+      "Push",
+      "dApp",
+      "Pull"
+    ]
+  },
+  {
+    "Country": "Mexico",
+    "Code": "1017",
+    "Category": "Economics",
+    "SubCategory": "Inflation",
+    "Name": "CPI",
+    "ShortDesc": "undefined / CPI",
+    "Description": "The CPI measures inflation in the Mexican consumer market.",
+    "Source": "INEGI",
+    "Frequency": "Monthly",
+    "Decimal": 2,
+    "License": "Free",
+    "Interfaces": [
+      "Push",
+      "dApp",
+      "Pull"
+    ]
+  },
+  {
+    "Country": "Mexico",
+    "Code": "1018",
+    "Category": "Economics",
+    "SubCategory": "Interest Rate",
+    "Name": "TIIE",
+    "ShortDesc": "undefined / TIIE",
+    "Description": "The TIIE is the interbank equilibrium interest rate in Mexico, used as a benchmark for credit.",
+    "Source": "Mexican Central Bank",
+    "Frequency": "Daily",
+    "Decimal": 2,
+    "License": "Free",
+    "Interfaces": [
+      "dApp"
+    ]
+  }
+]

@@ -1,0 +1,59 @@
+{
+  "currency": "U$",
+  "companyName": "Scenium",
+  "companyFullName": "Scenium Global Inc ",
+  "logo": "/logos/scenium.webp",
+  "description":"Scenium is a digital asset platform offering tokenized stocks, private funds, and cryptocurrencies. It is incorporated in Ontario, Canada.",
+  "heartbeat":"1 month",
+  "assetDistribution": [
+    {
+      "type": "funds",
+      "name": "Mortgage Fund",
+      "value": 515445
+    },
+    {
+      "type": "cash",
+      "name": "Cash and Stock ",
+      "value": 115809
+    }
+  ],
+  "tokens": [
+    {
+      "id": "1",
+      "logo": "/tokens/none.png",
+      "symbol": "BRAM1",
+      "name": "Brabull Mortgage I",
+      "chains": ["ethereum"],
+      "circulation24h": 1332,
+      "tokenPrice": 1,
+      "marketcap": 1332,
+      "oracleContract": "",
+      "share": 50
+    },
+    {
+      "id": "2",
+      "logo": "/tokens/none.png",
+      "symbol": "BRAM2",
+      "name": " Brabull Mortgage II",
+      "chains": ["ethereum"],
+      "circulation24h": 5502,
+      "tokenPrice": 1,
+      "marketcap": 5502,
+      "oracleContract": "",
+      "share": 50
+    }
+  ],
+  "chainDistribution": [
+    {
+      "name": "ethereum",
+      "value": 100
+    }
+  ],
+  "reportList": [
+    {
+      "date": "May, 29 2025",
+      "file": "/reports/scenium/report_may_2025.pdf"
+    }
+  ]
+ 
+}

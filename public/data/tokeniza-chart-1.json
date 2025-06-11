@@ -1,0 +1,206 @@
+{
+  "historical": [
+    {
+      "date": "08 Jun 21h",
+      "circulation": 90265,
+      "reserves": 101477.14,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "08 Jun 22h",
+      "circulation": 90265,
+      "reserves": 101477.14,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "08 Jun 23h",
+      "circulation": 90265,
+      "reserves": 101477.14,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "09 Jun 00h",
+      "circulation": 90265,
+      "reserves": 101477.14,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "09 Jun 01h",
+      "circulation": 90265,
+      "reserves": 101477.14,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "09 Jun 02h",
+      "circulation": 90265,
+      "reserves": 101477.14,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "09 Jun 03h",
+      "circulation": 90265,
+      "reserves": 101477.14,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "09 Jun 04h",
+      "circulation": 90265,
+      "reserves": 101477.14,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "09 Jun 05h",
+      "circulation": 90265,
+      "reserves": 101477.14,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "09 Jun 06h",
+      "circulation": 90265,
+      "reserves": 101477.14,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "09 Jun 07h",
+      "circulation": 90265,
+      "reserves": 101477.14,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "09 Jun 08h",
+      "circulation": 90265,
+      "reserves": 101477.14,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "09 Jun 09h",
+      "circulation": 90265,
+      "reserves": 101477.14,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "09 Jun 10h",
+      "circulation": 90265,
+      "reserves": 101477.14,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "09 Jun 11h",
+      "circulation": 90226,
+      "reserves": 101438.14,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 39.5
+    },
+    {
+      "date": "09 Jun 12h",
+      "circulation": 90226,
+      "reserves": 101438.14,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "09 Jun 13h",
+      "circulation": 90226,
+      "reserves": 101438.14,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "09 Jun 14h",
+      "circulation": 89904,
+      "reserves": 101418.47,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 100
+    },
+    {
+      "date": "09 Jun 15h",
+      "circulation": 144904,
+      "reserves": 101328.97,
+      "totalTransfer": 100,
+      "transactions": 2,
+      "totalBurned": 90
+    },
+    {
+      "date": "09 Jun 16h",
+      "circulation": 144904,
+      "reserves": 101328.97,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    },
+    {
+      "date": "09 Jun 17h",
+      "circulation": 144904,
+      "reserves": 101328.97,
+      "totalTransfer": 100,
+      "transactions": 3,
+      "totalBurned": 0
+    },
+    {
+      "date": "09 Jun 18h",
+      "circulation": 144904,
+      "reserves": 101328.97,
+      "totalTransfer": 100,
+      "transactions": 6,
+      "totalBurned": 0
+    },
+    {
+      "date": "09 Jun 19h",
+      "circulation": 144904,
+      "reserves": 101328.97,
+      "totalTransfer": 47,
+      "transactions": 1,
+      "totalBurned": 0
+    },
+    {
+      "date": "09 Jun 20h",
+      "circulation": 144904,
+      "reserves": 101328.97,
+      "totalTransfer": 0,
+      "transactions": 0,
+      "totalBurned": 0
+    }
+  ],
+  "total": {
+    "periodTotalTransfer": 347,
+    "periodTransactions": 12,
+    "periodTotalBurned": 229.49999999
+  },
+  "average": {
+    "circulation": 103904.8333,
+    "reserves": 101432.77791666667,
+    "avgcolateral": "100%"
+  }
+}

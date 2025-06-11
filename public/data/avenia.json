@@ -1,0 +1,94 @@
+{
+  "currency": "R$",
+  "companyName": "Avenia",
+  "companyFullName" : "Avenia - BRLA DIGITAL LTDA",
+  "logo": "/logos/avenia.png",
+  "description": "We were engaged by BRLA Digital LTDA to apply reasonable assurance procedures on the assertion that the Fair Value of Assets Held in the Brazilian Real (R$) Reserve is equal to or greater than the amount of BRLA cryptocurrency in circulation, in accordance with the criteria set out in the Transparency Report, as of January 31, 2025, at 11:59:59 PM +UTC.",
+  "contract": "0xe6a537a407488807f0bbeb0038b79004f19dddfb",
+  "dapp": "https://avenia.io",
+  "heartbeat": "1 month",
+  "threshold": "",
+
+  "assetDistribution": [
+    {
+      "type": "cash",
+      "name": "Cash or Equivalent - Stark Bank",
+      "value": 779089
+    },
+    {
+      "type": "cash",
+      "name": "Cash or Equivalent - Banco Itau",
+      "value": 0
+    },
+    {
+      "type": "cash",
+      "name": "Cash or Equivalent - Banco BTG",
+      "value": 187800
+    },
+    {
+      "type": "bonds",
+      "name": "Brazilian Bonds - Itau",
+      "value": 2000000
+    },
+    {
+      "type": "bonds",
+      "name": "Brazilian Bonds - BTG",
+      "value": 2241547
+    }
+  ],
+  "tokens": [
+    {
+      "id": "1",
+      "logo": "/tokens/brla.webp",
+      "symbol": "BRLA",
+      "name": "BRLA Digital BRLA",
+      "tokenPrice": 0.998487,
+      "marketcap": 5412520,
+      "circulation24h": 1197209.16,
+      "oracleContract": "",
+      "chains": [
+        "polygon",
+        "moonbeam",
+        "gnosis",
+        "celo"
+      ],
+      "share": 100
+    }
+  ],
+  "chainDistribution": [
+    {
+      "name": "polygon",
+      "value": 82.32098813894822
+    },
+    {
+      "name": "moonbeam",
+      "value": 4.139021425432181
+    },
+    {
+      "name": "celo",
+      "value": 2.538751522118359
+    },
+    {
+      "name": "gnosis",
+      "value": 11.186850488788643
+    }
+  ],
+  "reportList": [
+    {
+      "date": "March, 2025",
+      "url": "/reports/avenia/report_mar_2025.pdf"
+    },
+    {
+      "date": "February, 2025",
+      "file": "/reports/avenia/report_feb_2025.pdf"
+    },
+    {
+      "date": "January, 2025",
+      "file": "/reports/avenia/report_jan_2025.pdf"
+    },
+    {
+      "date": "December 31, 2024",
+      "file": "/reports/avenia/report_dec_2024.pdf"
+    }
+  ]
+}

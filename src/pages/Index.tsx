@@ -1,138 +1,297 @@
 
-import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeSwitch } from "@/components/theme-switch";
-import { ReportHeader } from "@/components/report-header";
-import { BalancesChart } from "@/components/balances-chart";
-import { ChangeChart } from "@/components/change-chart";
-import { ReservesBreakdown } from "@/components/reserves-breakdown";
-import { AuditReport } from "@/components/audit-report";
-import { TokenList } from "@/components/token-list";
-import { Footnotes } from "@/components/footnotes";
+import { ThemeProvider } from "@/components/Sections/theme-provider";
+import { ReportHeader } from "@/components/Sections/report-header";
+import { BalancesChart } from "@/components/Sections/balances-chart";
+import { HistoryChart } from "@/components/Sections/history-chart";
+import { ReservesBreakdown } from "@/components/Sections/reserves-breakdown";
+import { AuditReport } from "@/components/Sections/audit-report";
+import { TokenList } from "@/components/Sections/token-list";
+import { Footnotes } from "@/components/Sections/footnotes";
+import { TokenChainBreakdown } from "@/components/Sections/token-chains";
+import { formatLargeNumber } from "@/lib/utils";
+import { useState } from "react";
+import { useEffect } from "react";
 
-// Mock data for the charts
-const generateHistoricalData = () => {
-  const data = [];
-  for (let hour = 0; hour <= 20; hour++) {
-    const baseValue = 500 + Math.random() * 100;
-    const reserves = hour < 10 
-      ? baseValue + (hour * 20) + (Math.random() * 50)
-      : baseValue + 200 - ((hour - 10) * 25) + (Math.random() * 50);
-    data.push({
-      hour,
-      reserves,
-      circulation: reserves - (Math.random() * 100)
-    });
-  }
-  return data;
-};
 
-const TOKENS = [
-  {
-    id: "1",
-    logo: "500",
-    symbol: "bCSPX",
-    name: "Backed CSPX Core S&P 500",
-    chains: ["ethereum", "polygon", "chainlink"],
-    circulation: { amount: 9142.25, symbol: "bCSPX" },
-    collateral: { amount: 9164.00, symbol: "CSPX" },
-    collateralValue: "$5,789,421.33",
-    reserveRatio: 100.24,
-    oracleContract: "0x55e756...c43a8033"
-  },
-  {
-    id: "2",
-    logo: "€",
-    symbol: "bC3M",
-    name: "Backed GOVIES 0-6 months EURO invests",
-    chains: ["ethereum", "chainlink", "polygon"],
-    circulation: { amount: 23385.65, symbol: "bC3M" },
-    collateral: { amount: 23394.00, symbol: "C3M" },
-    collateralValue: "€2,901,925.48",
-    reserveRatio: 100.04,
-    oracleContract: "0x648E0f...3c4dc2Af"
-  }
-];
 
 const FOOTNOTES = [
   {
     id: "1",
-    text: "Tether typically updates the information on the Tokens in Circulation page daily. The information provided is based on the information available to Tether, which may be delayed. Accordingly, the information may not reflect the exact number of tokens in circulation at any given time."
+    text: "This is a real-time transparency report powered by Fact Finance, showing verified off-chain reserves with automated on-chain updates when thresholds are met."
   },
   {
     id: "2",
-    text: "The Tether Issuer is Tether International, S.A. de C.V. When \"Tether Issuer\" is used in connection with a particular Reserve report, it means the entity or entities identified in that report as issuing Tether."
+    text: "The heartbeat is a timing rule that ensures updates happen at regular intervals. For example, with a 5-minute heartbeat, the system will attempt an update at least every 5 minutes—even without major changes. This prevents data staleness and detects delays or outages quickly."
   },
   {
     id: "3",
-    text: "The information presented is subject to the limitations, qualifications and assumptions expressed in the accompanying reports and subject to Tether's Terms of Service, including Section 12 (No Representations & Warranties) and Section 13 (Disclaimer of Warranties). This information is provided solely for informing Tether's customers and the public generally on Tether's consolidated reserves backing the Tokens in circulation."
+    text: "The deviation threshold defines how much the reserve balance must change before a new on-chain update is triggered. For instance, with a 2% threshold, the system only publishes a new value if the balance moves by 2% or more since the last update. This avoids unnecessary updates due to minor fluctuations."
   },
   {
     id: "4",
-    text: "Reserves reports are not financial statements but selected financial information extracted from accounting records. Information presented is of entities stated in the relevant report, and may include assets and liabilities or credits and charges attributable to entities not issuing Tether described in the Reserves report. Reported information may be affected if assumptions change or if actual circumstances differ from those in the standards and assumptions."
-  }
+    text: "Collateral Reserves are real-world assets—such as cash or public securities—held in reserve to back issued tokens. Fact Finance verifies the existence and value of these reserves through connected data sources."
+  },
+  {
+    id: "5",
+    text: "Tokens Issued is the total amount of tokens currently in circulation, issued by the tokenization platform. Each unit should be backed by a verified reserve, ensuring a transparent 1:1 or over-collateralized ratio."
+  },
+  {
+    id: "6",
+    text: "Excess Collateral is the portion of reserves that exceeds the circulating supply of tokens. It acts as a safety buffer and may allow additional token issuance while maintaining full backing."
+  },
 ];
 
-const ASSET_DISTRIBUTION = {
-  cash: 81.49,
-  bonds: 0.01,
-  metals: 4.46,
-  bitcoin: 5.13,
-  investments: 2.89,
-  loans: 6.01
+type LastData = {
+  date:string;
+  circulation: number;
+  reserves: number;
+  totalTransfer: number;
+  transactions: number;
+  totalBurned: number;
 };
 
-const Index = () => {
+type ReportItem = {
+  date: string;
+  file: string;
+};
+
+type AssettItem = {
+  type: string;
+  name: string;
+  value: number;
+};
+
+type ChainItem = {
+  name: string;
+  value: number;
+};
+
+type NoteItem = {
+  id: string;
+  text: string;
+}
+
+type total = {
+  periodTotalTransfer: number;
+  periodTransactions: number;
+  periodTotalBurned:number;
+}
+
+type average = {
+  circulation: number;
+  reserves: number;
+  avgcolateral: string;
+}
+
+type Data = {
+  threshold: string;
+  heartbeat: string;
+  chainDistribution: ChainItem[];
+  assetDistribution: AssettItem[];
+  logo: string;
+  chart_history_change: number;
+  chart_history_new_reserves: number;
+  chart_history_new_tokens_issued: number;
+  reportList: ReportItem[];
+  currency: string;
+  last: LastData;
+  companyFullName: string;
+  companyName: string;
+  tokens: any[]; 
+  historicalData?: LastData[]; 
+  historicalData1?: LastData[];
+  total: total;
+  total1: total;
+  average: average;
+  average1: average;
+  footnotes: NoteItem[]; 
+  description:string;
+
+};
+
+export const Index = ({ client }: { client: string }) => {
+  const [data, setData] = useState<Data>({
+    companyName: "",
+    logo: "",
+    chart_history_change: 0,
+    chart_history_new_reserves: 0,
+    chart_history_new_tokens_issued: 0,
+    reportList: [],
+    currency: "",
+    last: {
+      date: "",
+      circulation: 0, 
+      reserves: 0,
+      totalTransfer: 0,
+      transactions: 0,
+      totalBurned: 0
+    },
+    companyFullName: "",
+    tokens: [],
+    historicalData: [],
+    historicalData1: [],
+    total: {
+      periodTotalTransfer: 0,
+      periodTransactions: 0,
+      periodTotalBurned: 0
+    },
+    total1: {
+      periodTotalTransfer: 0,
+      periodTransactions: 0,
+      periodTotalBurned: 0
+    },
+    average: {
+      circulation:0,
+      reserves:0,
+      avgcolateral:'-'
+    },
+    average1: {
+      circulation:0,
+      reserves:0,
+      avgcolateral:'-'
+    },
+    assetDistribution: [],
+    chainDistribution: [],
+    footnotes: [],
+    threshold: "",
+    heartbeat: "",
+    description:"",
+  });
+  const [loaded, setLoaded] = useState(false)
+
+  const  loadData = async() => {
+
+      let historicalData1 =[];
+      let total1 =[];
+      let average1 =[];
+
+      try {
+        const responseChart1 = await fetch(`/data/${client}-chart-1.json`)
+        const dataChart1 = await responseChart1.json()
+        historicalData1=dataChart1.historical;
+        total1=dataChart1.total;
+        average1=dataChart1.average;
+      } catch {}
+
+      const responseChart = await fetch(`/data/${client}-chart.json`)
+      const dataChart = await responseChart.json()
+
+      const response = await fetch(`/data/${client}.json`)
+      const data = await response.json()
+
+      data.historicalData=dataChart.historical;
+      data.historicalData1=historicalData1;
+      data.total=dataChart.total;
+      data.total1=total1;
+      data.average=dataChart.average;
+      data.average1=average1;
+      data.last = data.historicalData[data.historicalData.length - 1];
+      data.chart_history_new_tokens_issued = data.last.circulation - data.historicalData[0].circulation;
+      data.chart_history_new_reserves = data.last.reserves - data.historicalData[0].reserves;
+      data.chart_history_change = ((data.historicalData[0].circulation / data.historicalData[0].reserves) / (data.last.circulation / data.last.reserves)) * 100;
+
+      if (data.footnotes) FOOTNOTES.push(...data.footnotes)
+
+      setData(data)
+      setLoaded(true)
+      document.title = `${data.companyName} - Proof of reserves`
+  
+    
+  }
+  useEffect(() => {
+
+    loadData();
+    
+   
+  }, []);
+
   return (
-    <ThemeProvider defaultTheme="light">
+    <ThemeProvider defaultTheme="dark">
+      {loaded? (
       <div className="min-h-screen bg-background">
         <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="flex justify-end mb-6">
-            <ThemeSwitch />
-          </div>
-          
-          <ReportHeader 
-            companyName="Tokeniza Stable Coin" 
-            reserveRatio="Over 100%" 
-            reportDate="May 06, 2025" 
+
+
+          <ReportHeader
+            companyName={data.companyFullName}
+            contractLink=""
+            contract=""
+            logo={data.logo}
+            description={data.description}
+            circulation={formatLargeNumber(data.last.circulation)}
+            currency={data.currency}
+            reserves={formatLargeNumber(data.last.reserves)}
+            ratio={(data.last.reserves / data.last.circulation * 100).toFixed(1) + "%"}
+            dateAs={data.historicalData[data.historicalData.length-1].date}
+            heartbeat={data.heartbeat}
+            threshold={data.threshold}
+            dappLink="https://tokeniza.com.br"
           />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-            <div className="bg-card rounded-lg border p-6 shadow-sm h-full">
-              <BalancesChart circulation={60.5} reserves={60.7} />
-            </div>
-            <div className="bg-card rounded-lg border p-6 shadow-sm h-full">
-              <ChangeChart 
-                emitido={14.2} 
-                resgatado={14.0} 
-                change={0.28}
-                historicalData={generateHistoricalData()} 
-              />
-            </div>
+
+            <BalancesChart
+              circulation={data.last.circulation}
+              reserves={data.last.reserves}
+              over={data.last.reserves - data.last.circulation}
+              currency={data.currency}
+            />
+
+            <HistoryChart
+              heartbeat={data.heartbeat}
+              historicalData={data.historicalData}
+              historicalData1={data.historicalData1}
+              periodTotalTransfer={data.total?.periodTotalTransfer??0}
+              periodTotalTransfer1={data.total1?.periodTotalTransfer??0}
+              periodTransactions={data.total?.periodTransactions??0}
+              periodTransactions1={data.total1?.periodTransactions??0}
+              avgcolateral={data.average?.avgcolateral??'-'}
+              avgcolateral1={data.average1?.avgcolateral??'-'}
+              currency={data.currency}
+            />
+
           </div>
-          
-          <div className="bg-card rounded-lg border p-6 shadow-sm mt-12 mb-8">
-            <h2 className="text-2xl font-bold mb-6">Reserves</h2>
-            <ReservesBreakdown 
-              totalAssets="$149,274,515,968.00" 
-              totalLiabilities="$143,682,673,568.00" 
-              netEquity="$5,591,842,400.00"
-              assetDistribution={ASSET_DISTRIBUTION}
+
+
+
+          <ReservesBreakdown
+            companyName={data.companyName}
+            currency={data.currency}
+            reserves={data.last.reserves }
+            issued={data.last.circulation }
+            balance={data.last.reserves  - data.last.circulation }
+            assetDistribution={data.assetDistribution}
+          />
+
+          <div className=" pt-0 p-6 shadow-sm rounded-md"  >
+
+            <TokenList
+              tokens={data.tokens}
+              currency={data.currency}
+              companyName={data.companyName}
+              reserves={data.last.reserves}
+              circulation={data.last.circulation}
+              periodTotalTransfer={data.total?.periodTotalTransfer}
+            />
+
+            <TokenChainBreakdown
+              totalChains={3}
+              totalTokens={1}
+              totalValue={formatLargeNumber(data.last.circulation)}
+              chainDistribution={data.chainDistribution}
             />
           </div>
-          
-          <div className="bg-card rounded-lg border p-6 shadow-sm my-8">
-            <AuditReport date="May 02, 2025" pages={5} />
-          </div>
-          
-          <div className="bg-card rounded-lg border p-6 shadow-sm my-8">
-            <TokenList tokens={TOKENS} />
-          </div>
-          
-          <div className="bg-card rounded-lg border p-6 shadow-sm my-8">
-            <Footnotes notes={FOOTNOTES} />
-          </div>
+
+          <AuditReport  reportsList={data.reportList} companyName={data.companyName} />
+
+          <Footnotes notes={FOOTNOTES} />
+
+        </div>
+        <div className="text-center text-muted-foreground pb-8 text-sm">
+          © 2025 Fact Finance. All rights reserved.
         </div>
       </div>
+      ):null}
     </ThemeProvider>
   );
 };
