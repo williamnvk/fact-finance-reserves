@@ -52,8 +52,8 @@ export const colors = defineSemanticTokens.colors({
     },
     success: {
       value: {
-        _light: "{colors.green.50}",
-        _dark: "{colors.green.950}",
+        _light: "{colors.success.50}",
+        _dark: "{colors.success.950}",
       },
     },
     info: {
@@ -102,8 +102,8 @@ export const colors = defineSemanticTokens.colors({
     },
     success: {
       value: {
-        _light: "{colors.green.600}",
-        _dark: "{colors.green.300}",
+        _light: "{colors.success.600}",
+        _dark: "{colors.success.300}",
       },
     },
     info: {
@@ -158,8 +158,8 @@ export const colors = defineSemanticTokens.colors({
     },
     success: {
       value: {
-        _light: "{colors.green.500}",
-        _dark: "{colors.green.400}",
+        _light: "{colors.success.500}",
+        _dark: "{colors.success.400}",
       },
     },
     info: {
@@ -301,7 +301,7 @@ export const colors = defineSemanticTokens.colors({
       },
     },
   },
-  green: {
+  success: {
     contrast: {
       value: {
         _light: "white",
@@ -310,38 +310,38 @@ export const colors = defineSemanticTokens.colors({
     },
     fg: {
       value: {
-        _light: "{colors.green.700}",
-        _dark: "{colors.green.300}",
+        _light: "{colors.success.700}",
+        _dark: "{colors.success.300}",
       },
     },
     subtle: {
       value: {
-        _light: "{colors.green.100}",
-        _dark: "{colors.green.900}",
+        _light: "{colors.success.100}",
+        _dark: "{colors.success.900}",
       },
     },
     muted: {
       value: {
-        _light: "{colors.green.200}",
-        _dark: "{colors.green.800}",
+        _light: "{colors.success.200}",
+        _dark: "{colors.success.800}",
       },
     },
     emphasized: {
       value: {
-        _light: "{colors.green.300}",
-        _dark: "{colors.green.700}",
+        _light: "{colors.success.300}",
+        _dark: "{colors.success.700}",
       },
     },
     solid: {
       value: {
-        _light: "{colors.green.600}",
-        _dark: "{colors.green.600}",
+        _light: "{colors.success.600}",
+        _dark: "{colors.success.600}",
       },
     },
     focusRing: {
       value: {
-        _light: "{colors.green.600}",
-        _dark: "{colors.green.600}",
+        _light: "{colors.success.600}",
+        _dark: "{colors.success.600}",
       },
     },
   },

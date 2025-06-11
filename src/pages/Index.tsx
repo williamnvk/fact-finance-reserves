@@ -1,5 +1,5 @@
 
-import { ThemeProvider } from "@/components/Sections/theme-provider";
+import { Box, Container, Grid, GridItem } from "@chakra-ui/react";
 import { ReportHeader } from "@/components/Sections/report-header";
 import { BalancesChart } from "@/components/Sections/balances-chart";
 import { HistoryChart } from "@/components/Sections/history-chart";
@@ -206,10 +206,10 @@ export const Index = ({ client }: { client: string }) => {
   }, []);
 
   return (
-    <ThemeProvider defaultTheme="dark">
+    <>
       {loaded? (
-      <div className="min-h-screen bg-background">
-        <div className="max-w-7xl mx-auto px-4 py-8">
+      <Box minH="100vh" bg="bg">
+        <Container maxW="7xl" px={4} py={8}>
 
 
           <ReportHeader
@@ -222,35 +222,39 @@ export const Index = ({ client }: { client: string }) => {
             currency={data.currency}
             reserves={formatLargeNumber(data.last.reserves)}
             ratio={(data.last.reserves / data.last.circulation * 100).toFixed(1) + "%"}
-            dateAs={data.historicalData[data.historicalData.length-1].date}
+            dateAs={data.historicalData?.[data.historicalData.length-1]?.date || ""}
             heartbeat={data.heartbeat}
             threshold={data.threshold}
             dappLink="https://tokeniza.com.br"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+          <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap={6} mt={12}>
 
-            <BalancesChart
-              circulation={data.last.circulation}
-              reserves={data.last.reserves}
-              over={data.last.reserves - data.last.circulation}
-              currency={data.currency}
-            />
+            <GridItem>
+              <BalancesChart
+                circulation={data.last.circulation}
+                reserves={data.last.reserves}
+                over={data.last.reserves - data.last.circulation}
+                currency={data.currency}
+              />
+            </GridItem>
 
-            <HistoryChart
-              heartbeat={data.heartbeat}
-              historicalData={data.historicalData}
-              historicalData1={data.historicalData1}
-              periodTotalTransfer={data.total?.periodTotalTransfer??0}
-              periodTotalTransfer1={data.total1?.periodTotalTransfer??0}
-              periodTransactions={data.total?.periodTransactions??0}
-              periodTransactions1={data.total1?.periodTransactions??0}
-              avgcolateral={data.average?.avgcolateral??'-'}
-              avgcolateral1={data.average1?.avgcolateral??'-'}
-              currency={data.currency}
-            />
+            <GridItem>
+              <HistoryChart
+                heartbeat={data.heartbeat}
+                historicalData={data.historicalData}
+                historicalData1={data.historicalData1}
+                periodTotalTransfer={data.total?.periodTotalTransfer??0}
+                periodTotalTransfer1={data.total1?.periodTotalTransfer??0}
+                periodTransactions={data.total?.periodTransactions??0}
+                periodTransactions1={data.total1?.periodTransactions??0}
+                avgcolateral={data.average?.avgcolateral??'-'}
+                avgcolateral1={data.average1?.avgcolateral??'-'}
+                currency={data.currency}
+              />
+            </GridItem>
 
-          </div>
+          </Grid>
 
 
 
@@ -263,7 +267,7 @@ export const Index = ({ client }: { client: string }) => {
             assetDistribution={data.assetDistribution}
           />
 
-          <div className=" pt-0 p-6 shadow-sm rounded-md"  >
+          <Box pt={0} p={6} shadow="sm" borderRadius="md">
 
             <TokenList
               tokens={data.tokens}
@@ -280,19 +284,19 @@ export const Index = ({ client }: { client: string }) => {
               totalValue={formatLargeNumber(data.last.circulation)}
               chainDistribution={data.chainDistribution}
             />
-          </div>
+          </Box>
 
           <AuditReport  reportsList={data.reportList} companyName={data.companyName} />
 
           <Footnotes notes={FOOTNOTES} />
 
-        </div>
-        <div className="text-center text-muted-foreground pb-8 text-sm">
+        </Container>
+        <Box textAlign="center" color="fg.muted" pb={8} fontSize="sm">
           © 2025 Fact Finance. All rights reserved.
-        </div>
-      </div>
+        </Box>
+      </Box>
       ):null}
-    </ThemeProvider>
+    </>
   );
 };
 
