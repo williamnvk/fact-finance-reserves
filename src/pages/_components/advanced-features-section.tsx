@@ -26,7 +26,7 @@ export const AdvancedFeaturesSection = () => {
 
             <Heading size="2xl" color="white">
               Programmable{' '}
-              <Text as="span" bgGradient="linear(to-r, yellow.300, orange.300)" bgClip="text">
+              <Text as="span" bgImage="linear-gradient(35deg, {colors.brand.500}, {colors.brand.400})" bgClip="text">
                 Auditing
               </Text>{' '}
               and Automation

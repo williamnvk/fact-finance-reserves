@@ -47,7 +47,7 @@ export const TestimonialsSection = () => {
             <MessageSquare size={16} style={{ marginRight: '8px' }} />
             Client Success Stories
           </Badge>
-          <Heading fontSize="3xl" maxW="2xl">
+          <Heading fontSize="4xl" color="white" maxW="3xl">
             Trusted by{' '}
             <Text as="span" bgImage="linear-gradient(35deg, {colors.brand.500}, {colors.brand.400})" bgClip="text">
               Industry Leaders

@@ -60,7 +60,7 @@ export const HomeHero = ({ totalReserves, clients }: { totalReserves: number; cl
             <Heading fontSize="4xl" fontWeight="light" color="success.300" textAlign="center">
               ${formatLargeNumber(totalReserves)}
             </Heading>
-            <Text color="whiteAlpha.700" fontSize="sm" fontWeight="light">
+            <Text color="whiteAlpha.800" fontSize="sm" fontWeight="light">
               Audited Reserves
             </Text>
           </VStack>
@@ -69,7 +69,7 @@ export const HomeHero = ({ totalReserves, clients }: { totalReserves: number; cl
             <Heading fontSize="4xl" fontWeight="light" color="success.300" textAlign="center">
               {clients.length}+
             </Heading>
-            <Text color="whiteAlpha.700" fontSize="sm" fontWeight="light">
+            <Text color="whiteAlpha.800" fontSize="sm" fontWeight="light">
               Active Audits
             </Text>
           </VStack>
@@ -78,7 +78,7 @@ export const HomeHero = ({ totalReserves, clients }: { totalReserves: number; cl
             <Heading fontSize="4xl" fontWeight="light" color="success.300" textAlign="center">
               {totalAudits}
             </Heading>
-            <Text color="whiteAlpha.700" fontSize="sm" fontWeight="light">
+            <Text color="whiteAlpha.800" fontSize="sm" fontWeight="light">
               Total Audits
             </Text>
           </VStack>
@@ -87,7 +87,7 @@ export const HomeHero = ({ totalReserves, clients }: { totalReserves: number; cl
             <Heading fontSize="4xl" fontWeight="light" color="success.300" textAlign="center">
               {uptimePercentage}%
             </Heading>
-            <Text color="whiteAlpha.700" fontSize="sm" fontWeight="light">
+            <Text color="whiteAlpha.800" fontSize="sm" fontWeight="light">
               Uptime
             </Text>
           </VStack>
