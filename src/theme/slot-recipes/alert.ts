@@ -38,7 +38,7 @@ export const alertSlotRecipe = defineSlotRecipe({
     status: {
       info: {
         root: {
-          colorPalette: "blue",
+          colorPalette: "brand",
         },
       },
       warning: {
@@ -48,7 +48,7 @@ export const alertSlotRecipe = defineSlotRecipe({
       },
       success: {
         root: {
-          colorPalette: "green",
+          colorPalette: "success",
         },
       },
       error: {

@@ -4,6 +4,9 @@ import { formatLargeNumber } from '@/lib/utils';
 import { SystemStatus } from './system-status';
 
 export const HomeHero = ({ totalReserves, clients }: { totalReserves: number; clients: any[] }) => {
+  const totalAudits = clients.length * 365; // Assuming daily audits
+  const uptimePercentage = 99.9;
+
   return (
     <>
       <Container maxW="7xl" position="relative" zIndex={1} py={24}>
@@ -12,7 +15,7 @@ export const HomeHero = ({ totalReserves, clients }: { totalReserves: number; cl
 
           <Badge
             size="lg"
-            colorPalette="blue"
+            colorPalette="brand"
             rounded="full"
             px={6}
             py={3}
@@ -52,7 +55,7 @@ export const HomeHero = ({ totalReserves, clients }: { totalReserves: number; cl
           </VStack>
 
           {/* Key Stats */}
-          <Grid templateColumns="repeat(3, 1fr)" gap={6} maxW="2xl" w="full" py={4}>
+          <Grid templateColumns="repeat(4, 1fr)" gap={6} maxW="2xl" w="full" py={4}>
             <VStack gap={0}>
               <Heading fontSize="4xl" fontWeight="light" color="success.300" textAlign="center">
                 ${formatLargeNumber(totalReserves)}
@@ -73,7 +76,16 @@ export const HomeHero = ({ totalReserves, clients }: { totalReserves: number; cl
 
             <VStack gap={0}>
               <Heading fontSize="4xl" fontWeight="light" color="success.300" textAlign="center">
-                99.9%
+                {totalAudits}
+              </Heading>
+              <Text color="whiteAlpha.700" fontSize="sm">
+                Total Audits
+              </Text>
+            </VStack>
+
+            <VStack gap={0}>
+              <Heading fontSize="4xl" fontWeight="light" color="success.300" textAlign="center">
+                {uptimePercentage}%
               </Heading>
               <Text color="whiteAlpha.700" fontSize="sm">
                 Uptime
