@@ -179,7 +179,7 @@ const Home = () => {
             </Text>
           </VStack>
 
-          <Grid templateColumns={{ base: '1fr', lg: 'repeat(2, 1fr)' }} gap={8} w="full">
+          <Grid templateColumns={{ base: '1fr', lg: 'repeat(2, 1fr)' }} gap={4} w="full">
             {clients.map((client, index) => {
               const latestData = client.historicalData[client.historicalData.length - 1];
               const reserveRatio = ((latestData.reserves / latestData.reserves) * 100).toFixed(1);
@@ -193,21 +193,31 @@ const Home = () => {
                   key={index}
                   overflow="hidden"
                   border="1px solid"
-                  borderColor="gray.100"
+                  borderColor="whiteAlpha.200"
                   _hover={{
-                    shadow: '2xl',
                     transform: 'translateY(-4px)',
-                    borderColor: 'brand.200',
+                    borderColor: 'whiteAlpha.300',
                   }}
                   transition="all 0.3s"
-                  bg="white"
+                  bg="linear-gradient(35deg, rgba(0,0,0,0.2), rgba(0,0,0,0))"
                   position="relative"
+                  _before={{
+                    content: '""',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: '1px',
+                    bg: 'linear-gradient(90deg, transparent, {colors.brand.400}, transparent)',
+                  }}
                 >
                   <Card.Header>
                     <Flex justify="space-between" align="flex-start">
                       {client.logo === 'avenia' && <AveniaLogo width={100} height={50} />}
                       {client.logo === 'tokeniza' && <TokenizaLogo width={100} height={50} />}
-                      {client.logo === 'scenium' && <Image src="/logos/scenium.png" alt="Scenium" width={200} height={50} />}
+                      {client.logo === 'scenium' && (
+                        <Image src="/logos/scenium.png" alt="Scenium" width={200} height={50} />
+                      )}
 
                       <Tag.Root colorPalette="success" variant="subtle">
                         <Tag.Label>Verified</Tag.Label>
@@ -224,13 +234,13 @@ const Home = () => {
                       <Grid templateColumns="repeat(2, 1fr)" gap={6}>
                         <Box>
                           <Stat.Root>
-                            <Stat.Label color="gray.500" fontSize="sm">
+                              <Stat.Label color="fg.muted" fontSize="sm">
                               Total reserves
                             </Stat.Label>
                             <Stat.ValueText fontSize="2xl" fontWeight="bold" color="success.600">
                               ${formatLargeNumber(latestData.reserves)}
                             </Stat.ValueText>
-                            <Stat.HelpText color="gray.400" fontSize="xs">
+                            <Stat.HelpText color="fg.muted" fontSize="xs">
                               <TrendingUp
                                 size={12}
                                 style={{
@@ -247,13 +257,13 @@ const Home = () => {
 
                         <Box>
                           <Stat.Root>
-                            <Stat.Label color="gray.500" fontSize="sm">
+                            <Stat.Label color="fg.muted" fontSize="sm">
                               Reserve ratio
                             </Stat.Label>
                             <Stat.ValueText fontSize="2xl" fontWeight="bold" color="brand.500">
                               {reserveRatio}%
                             </Stat.ValueText>
-                            <Stat.HelpText color="gray.400" fontSize="xs">
+                              <Stat.HelpText color="fg.muted" fontSize="xs">
                               <Shield size={12} style={{ display: 'inline', marginRight: '4px' }} />
                               Fully backed
                             </Stat.HelpText>
@@ -264,16 +274,16 @@ const Home = () => {
                       {/* Reserve Health Indicator */}
                       {/* Enhanced Reserve Health Indicator */}
                       <Box
-                        p={5}
-                        bgImage="linear-gradient(35deg, {colors.gray.50}, {colors.gray.100})"
+                        p={4}
+                        bg="linear-gradient(35deg, {colors.brand.900}, {colors.brand.900})"
                         rounded="xl"
                         border="1px solid"
-                        borderColor="gray.200"
+                        borderColor="whiteAlpha.200"
                       >
                         <HStack justify="space-between" mb={3}>
                           <HStack gap={2}>
                             <Box w={2} h={2} bg="success.500" rounded="full" />
-                            <Text fontSize="sm" color="gray.700" fontWeight="semibold">
+                            <Text fontSize="sm" color="fg.muted" fontWeight="semibold">
                               Reserve health status
                             </Text>
                           </HStack>
@@ -306,8 +316,6 @@ const Home = () => {
                         </Text>
                       </Box>
 
-                      <Separator />
-
                       {/* Audit Details */}
                       <VStack gap={3} align="stretch">
                         <HStack justify="space-between" fontSize="sm">
@@ -327,14 +335,14 @@ const Home = () => {
                         </HStack>
                         <HStack justify="space-between" fontSize="sm">
                           <Text color="fg.muted">Compliance Status:</Text>
-                          <Badge colorPalette="success" size="sm" variant="subtle">
+                          <Badge colorPalette="success" size="xs" variant="subtle">
                             <CheckCircle size={10} style={{ marginRight: '4px' }} />
                             Compliant
                           </Badge>
                         </HStack>
                         <HStack justify="space-between" fontSize="sm">
                           <Text color="fg.muted">Risk Level:</Text>
-                          <Badge colorPalette="success" size="sm" variant="subtle">
+                          <Badge colorPalette="success" size="xs" variant="subtle">
                             Low risk
                           </Badge>
                         </HStack>
@@ -346,11 +354,11 @@ const Home = () => {
                     <Link to={client.companyName.toLowerCase()}>
                       <Button
                         variant="ghost"
-                        color="brand.800"
+                        color="brand.50"
                         size="lg"
                         w="full"
                         colorPalette="brand"
-                        _hover={{ bg: 'brand.50' }}
+                        _hover={{ bg: 'brand.500' }}
                       >
                         View complete report
                         <ArrowRight size={16} style={{ marginLeft: '8px' }} />
