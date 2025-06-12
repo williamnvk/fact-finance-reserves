@@ -2,7 +2,7 @@
   "currency": "R$",
   "companyName": "Tokeniza",
   "companyFullName": "tBRL - Tokenized Brazilian Real",
-  "logo": "/logos/tokeniza.png",
+  "logo": "tokeniza",
   "description":"O tBRL é uma stablecoin pareada 1:1 com o real brasileiro (BRL), emitida pela Tokeniza, com lastro integral em contas bancárias segregadas e integração total ao sistema financeiro nacional via Pix. Sua proposta é criar uma ponte segura, transparente e automatizada entre o real e o ecossistema blockchain, promovendo liquidez, rastreabilidade e usabilidade on-chain.",
   "heartbeat": "1 hour",
   "historicalData": [

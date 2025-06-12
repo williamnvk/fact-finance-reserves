@@ -41,6 +41,8 @@ import { HomeHero } from './_components/home_hero';
 import { FAQSection } from './_components/faq-section';
 import { TestimonialsSection } from './_components/testimonials-section';
 import { WhyChooseUseSection } from './_components/why-choose-use-section';
+import AveniaLogo from '@/components/Icons/Avenia';
+import TokenizaLogo from '@/components/Icons/Tokeniza';
 
 // Define types for better TypeScript support
 interface HistoricalData {
@@ -203,22 +205,10 @@ const Home = () => {
                 >
                   <Card.Header>
                     <Flex justify="space-between" align="flex-start">
-                      <HStack gap={4}>
-                        <Image
-                          src={client.logo}
-                          alt={client.companyName}
-                          boxSize="60px"
-                          objectFit="contain"
-                          bg="gray.50"
-                          rounded="xl"
-                          p={2}
-                        />
-                        <VStack align="flex-start" gap={1}>
-                          <Heading size="lg" color="gray.800">
-                            {client.companyName}
-                          </Heading>
-                        </VStack>
-                      </HStack>
+                      {client.logo === 'avenia' && <AveniaLogo width={100} height={50} />}
+                      {client.logo === 'tokeniza' && <TokenizaLogo width={100} height={50} />}
+                      {client.logo === 'scenium' && <Image src="/logos/scenium.png" alt="Scenium" width={200} height={50} />}
+
                       <Tag.Root colorPalette="success" variant="subtle">
                         <Tag.Label>Verified</Tag.Label>
                         <Tag.EndElement>
@@ -235,7 +225,7 @@ const Home = () => {
                         <Box>
                           <Stat.Root>
                             <Stat.Label color="gray.500" fontSize="sm">
-                              Total Reserves
+                              Total reserves
                             </Stat.Label>
                             <Stat.ValueText fontSize="2xl" fontWeight="bold" color="success.600">
                               ${formatLargeNumber(latestData.reserves)}
@@ -258,7 +248,7 @@ const Home = () => {
                         <Box>
                           <Stat.Root>
                             <Stat.Label color="gray.500" fontSize="sm">
-                              Reserve Ratio
+                              Reserve ratio
                             </Stat.Label>
                             <Stat.ValueText fontSize="2xl" fontWeight="bold" color="brand.500">
                               {reserveRatio}%
@@ -284,7 +274,7 @@ const Home = () => {
                           <HStack gap={2}>
                             <Box w={2} h={2} bg="success.500" rounded="full" />
                             <Text fontSize="sm" color="gray.700" fontWeight="semibold">
-                              Reserve Health Status
+                              Reserve health status
                             </Text>
                           </HStack>
                           <Badge colorPalette="success" size="sm" variant="solid" px={3}>
@@ -345,7 +335,7 @@ const Home = () => {
                         <HStack justify="space-between" fontSize="sm">
                           <Text color="fg.muted">Risk Level:</Text>
                           <Badge colorPalette="success" size="sm" variant="subtle">
-                            Low Risk
+                            Low risk
                           </Badge>
                         </HStack>
                       </VStack>
@@ -362,7 +352,7 @@ const Home = () => {
                         colorPalette="brand"
                         _hover={{ bg: 'brand.50' }}
                       >
-                        View Complete Report
+                        View complete report
                         <ArrowRight size={16} style={{ marginLeft: '8px' }} />
                       </Button>
                     </Link>
@@ -380,7 +370,7 @@ const Home = () => {
           <VStack gap={6} textAlign="center">
             <Badge size="lg" colorPalette="purple" px={4} py={2} rounded="full">
               <Layers size={16} style={{ marginRight: '8px' }} />
-              Continuous and Auditable Validation
+              Continuous and auditable validation
             </Badge>
             <Heading fontSize="4xl" color="white" maxW="3xl">
               How we{' '}
@@ -399,7 +389,7 @@ const Home = () => {
               <Box p={4} bg="brand.100" rounded="full">
                 <Icon as={Globe} boxSize={12} color="brand.500" />
               </Box>
-              <Heading size="md">Direct Connection</Heading>
+              <Heading size="md">Direct connection</Heading>
               <Text fontSize="sm" lineHeight="1.6">
                 Direct integration with custodians, financial institutions and independent audit systems
               </Text>
@@ -409,7 +399,7 @@ const Home = () => {
               <Box p={4} bg="success.100" rounded="full">
                 <Icon as={Clock} boxSize={12} color="success.500" />
               </Box>
-              <Heading size="md">24/7 Monitoring</Heading>
+              <Heading size="md">24/7 monitoring</Heading>
               <Text fontSize="sm" lineHeight="1.6">
                 Continuous and automatic verification, with updated data synchronized with on-chain operations
               </Text>
@@ -419,7 +409,7 @@ const Home = () => {
               <Box p={4} bg="purple.100" rounded="full">
                 <Icon as={BarChart3} boxSize={12} color="purple.500" />
               </Box>
-              <Heading size="md">Advanced Analysis</Heading>
+              <Heading size="md">Advanced analysis</Heading>
               <Text fontSize="sm" lineHeight="1.6">
                 Proprietary algorithms detect discrepancies and generate automatic alerts for maximum security
               </Text>
@@ -429,7 +419,7 @@ const Home = () => {
               <Box p={4} bg="orange.100" rounded="full">
                 <Icon as={FileCheck} boxSize={12} color="orange.500" />
               </Box>
-              <Heading size="md">Public Reports</Heading>
+              <Heading size="md">Public reports</Heading>
               <Text fontSize="sm" lineHeight="1.6">
                 Transparent dashboards and auditable reports, publicly available for maximum transparency
               </Text>

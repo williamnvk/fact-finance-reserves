@@ -49,12 +49,12 @@ export const FAQSection = () => {
           <VStack gap={6} textAlign="center">
             <Badge size="lg" colorPalette="brand" px={4} py={2} rounded="full">
               <HelpCircle size={16} style={{ marginRight: '8px' }} />
-              Frequently Asked Questions
+              Frequently asked questions
             </Badge>
             <Heading fontSize="4xl" maxW="2xl" lineHeight="1.2">
-              Everything You Need to Know About{' '}
+              Everything you need to know about{' '}
               <Text as="span" bgImage="linear-gradient(35deg, {colors.brand.500}, {colors.brand.400})" bgClip="text">
-                Proof of Reserves
+                Proof of reserves
               </Text>
             </Heading>
             <Text fontSize="lg" maxW="1xl">

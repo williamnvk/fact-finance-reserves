@@ -2,7 +2,7 @@
   "currency": "R$",
   "companyName": "Avenia",
   "companyFullName" : "Avenia - BRLA DIGITAL LTDA",
-  "logo": "/logos/avenia.png",
+  "logo": "avenia",
   "description": "We were engaged by BRLA Digital LTDA to apply reasonable assurance procedures on the assertion that the Fair Value of Assets Held in the Brazilian Real (R$) Reserve is equal to or greater than the amount of BRLA cryptocurrency in circulation, in accordance with the criteria set out in the Transparency Report, as of January 31, 2025, at 11:59:59 PM +UTC.",
   "contract": "0xe6a537a407488807f0bbeb0038b79004f19dddfb",
   "dapp": "https://avenia.io",

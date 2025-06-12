@@ -1,5 +1,5 @@
 import { Container, Heading, Text, Grid, VStack, Badge, Box, Icon, SimpleGrid, Flex } from '@chakra-ui/react';
-import { Shield, Eye, Lock, Globe, Zap } from 'lucide-react';
+import { Shield, Eye, Lock, Globe, Zap, Info } from 'lucide-react';
 import { formatLargeNumber } from '@/lib/utils';
 import { SystemStatus } from './system-status';
 
@@ -29,15 +29,15 @@ export const HomeHero = ({ totalReserves, clients }: { totalReserves: number; cl
           </Badge>
 
           <Heading
-            fontSize="6xl"
+            fontSize="7xl"
             lineHeight="1.1"
             bgImage="linear-gradient(35deg, white, {colors.brand.200}, {colors.brand.200})"
             bgClip="text"
             fontWeight="400"
             textAlign="center"
-            maxW="3xl"
+            maxW="6xl"
           >
-            Transparency and Trust for the{' '}
+            Transparency and trust for the <br />
             <Text
               as="span"
               bgImage="linear-gradient(35deg, white, {colors.brand.500}, {colors.brand.200})"
@@ -61,7 +61,7 @@ export const HomeHero = ({ totalReserves, clients }: { totalReserves: number; cl
               ${formatLargeNumber(totalReserves)}
             </Heading>
             <Text color="whiteAlpha.800" fontSize="sm" fontWeight="light">
-              Audited Reserves
+              Audited reserves
             </Text>
           </VStack>
 
@@ -70,7 +70,7 @@ export const HomeHero = ({ totalReserves, clients }: { totalReserves: number; cl
               {clients.length}+
             </Heading>
             <Text color="whiteAlpha.800" fontSize="sm" fontWeight="light">
-              Active Audits
+              Active audits
             </Text>
           </VStack>
 
@@ -79,7 +79,7 @@ export const HomeHero = ({ totalReserves, clients }: { totalReserves: number; cl
               {totalAudits}
             </Heading>
             <Text color="whiteAlpha.800" fontSize="sm" fontWeight="light">
-              Total Audits
+              Total audits
             </Text>
           </VStack>
 
@@ -98,25 +98,25 @@ export const HomeHero = ({ totalReserves, clients }: { totalReserves: number; cl
           {[
             {
               icon: Eye,
-              title: 'Complete Transparency',
+              title: 'Complete transparency',
               description: 'Real-time visibility into all reserve backing with cryptographic proofs',
               color: 'brand',
             },
             {
               icon: Zap,
-              title: 'Instant Verification',
+              title: 'Instant verification',
               description: 'Automated monitoring and instant alerts for any discrepancies',
               color: 'warning',
             },
             {
               icon: Lock,
-              title: 'Enterprise Security',
+              title: 'Enterprise security',
               description: 'Bank-grade security protocols with multi-layer protection',
               color: 'success',
             },
             {
               icon: Globe,
-              title: 'Global Compliance',
+              title: 'Global compliance',
               description: 'Adherence to international regulatory standards and frameworks',
               color: 'brand',
             },

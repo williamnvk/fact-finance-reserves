@@ -11,14 +11,14 @@ export const WhyChooseUseSection = () => {
           <VStack gap={6} textAlign="center" mb={20}>
             <Badge px={4} py={2} rounded="full" bg="gray.900" color="gray.300">
               <Target size={16} style={{ marginRight: '8px' }} />
-              Blockchain Oracle Infrastructure
+              Blockchain oracle infrastructure
             </Badge>
             <Heading fontSize="4xl" color="white" maxW="3xl">
-              The Most{' '}
+              The most{' '}
               <Text as="span" bgImage="linear-gradient(35deg, {colors.brand.500}, {colors.brand.400})" bgClip="text">
-                Reliable Oracle
+                reliable oracle
               </Text>{' '}
-              for On-Chain Reserve Verification
+              for On-Chain reserve verification
             </Heading>
             <Text fontSize="xl" color="gray.400" lineHeight="1.7" maxW="2xl">
               Tamper-proof, real-time reserve data directly to smart contracts through our decentralized oracle network.
@@ -57,40 +57,40 @@ export const WhyChooseUseSection = () => {
             {/* Left Side - Features */}
             <VStack gap={8} align="flex-start">
               <Heading size="lg" color="white" mb={4}>
-                Key Features
+                Key features
               </Heading>
 
               <VStack gap={6} align="flex-start" w="full">
                 {[
                   {
                     icon: Network,
-                    title: 'Decentralized Network',
+                    title: 'Decentralized network',
                     description: 'Multi-node architecture prevents single points of failure',
                   },
                   {
                     icon: Code,
-                    title: 'Smart Contract Integration',
+                    title: 'Smart contract integration',
                     description: 'Native integration with DeFi protocols',
                   },
                   {
                     icon: Shield,
-                    title: 'Cryptographic Proofs',
+                    title: 'Cryptographic proofs',
                     description: 'Zero-knowledge proofs ensure data authenticity',
                   },
                   {
                     icon: Database,
-                    title: 'Multi-Chain Support',
+                    title: 'Multi-Chain support',
                     description: 'Cross-chain verification on 15+ networks',
                   },
                   {
                     icon: Zap,
-                    title: 'Real-Time Updates',
+                    title: 'Real-Time updates',
                     description: 'Sub-second reserve ratio updates',
                   },
                 ].map((feature, index) => (
                   <HStack key={index} gap={4} align="flex-start" w="full">
-                    <Flex align="center" justify="center" w={10} h={10} bg="gray.900" rounded="lg" flexShrink={0}>
-                      <Icon as={feature.icon} boxSize={5} color="gray.300" />
+                    <Flex align="center" justify="center" w={10} h={10} bg="whiteAlpha.100" rounded="lg" flexShrink={0}>
+                      <Icon as={feature.icon} boxSize={5} color="brand.100" />
                     </Flex>
                     <VStack align="flex-start" gap={1} flex={1}>
                       <Text fontWeight="semibold" color="white">
@@ -138,7 +138,7 @@ export const WhyChooseUseSection = () => {
               <Box bg="gray.900" rounded="xl" p={0} border="1px solid" borderColor="gray.800">
                 <VStack gap={6} align="stretch">
                   <VStack gap={2} textAlign="center" m={4} p={4}>
-                    <Heading size="lg">Oracle vs Traditional Data</Heading>
+                    <Heading size="lg">Oracle vs traditional data</Heading>
                     <Text fontSize="sm" color="fg.muted">
                       Why blockchain oracles are superior
                     </Text>
@@ -227,7 +227,7 @@ export const WhyChooseUseSection = () => {
           {/* Bottom Integration Section */}
           <VStack gap={8} mt={20} textAlign="center">
             <Heading size="xl" color="white" fontWeight="light">
-              Simple Integration
+              Simple integration
             </Heading>
             <Text fontSize="lg" color="gray.400" maxW="xl">
               Deploy with just a few lines of code
@@ -256,19 +256,19 @@ contract YourProtocol {
               <HStack gap={2}>
                 <CheckCircle size={16} color="#10B981" />
                 <Text fontSize="sm" color="gray.300">
-                  Chainlink Compatible
+                  Chainlink compatible
                 </Text>
               </HStack>
               <HStack gap={2}>
                 <Shield size={16} color="#3B82F6" />
                 <Text fontSize="sm" color="gray.300">
-                  Audited Contracts
+                  Audited contracts
                 </Text>
               </HStack>
               <HStack gap={2}>
                 <Network size={16} color="#8B5CF6" />
                 <Text fontSize="sm" color="gray.300">
-                  Multi-Chain
+                  Multi-chain
                 </Text>
               </HStack>
             </HStack>

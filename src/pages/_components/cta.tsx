@@ -12,7 +12,7 @@ export const CTA = () => {
           <Shield size={48} />
         </Box>
         <Heading size="3xl" fontWeight="800">
-          Strengthen Trust in Your Digital Asset
+          Strengthen trust in your digital asset
         </Heading>
         <Text fontSize="xl" color="whiteAlpha.900" maxW="700px" lineHeight="1.6">
           Discover how Fact Finance can bring more transparency, security and credibility to your tokenized assets.

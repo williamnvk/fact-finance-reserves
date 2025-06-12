@@ -45,14 +45,14 @@ export const TestimonialsSection = () => {
         <VStack gap={6} textAlign="center">
           <Badge size="lg" colorPalette="success" px={4} py={2} rounded="full">
             <MessageSquare size={16} style={{ marginRight: '8px' }} />
-            Client Success Stories
+            Client success stories
           </Badge>
           <Heading fontSize="4xl" color="white" maxW="3xl">
             Trusted by{' '}
             <Text as="span" bgImage="linear-gradient(35deg, {colors.brand.500}, {colors.brand.400})" bgClip="text">
-              Industry Leaders
+              industry leaders
             </Text>{' '}
-            Worldwide
+            worldwide
           </Heading>
           <Text fontSize="lg" maxW="3xl">
             See how leading financial institutions are transforming their reserve verification with Fact Finance
