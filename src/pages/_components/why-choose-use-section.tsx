@@ -1,5 +1,5 @@
 import { Container, Grid, Badge, Heading, Text, VStack, HStack, Box, SimpleGrid, Flex, Icon } from '@chakra-ui/react';
-import { CheckCircle, Target, Zap, Database, Shield, Network, Code, Cpu } from 'lucide-react';
+import { CheckCircle, Target, Zap, Database, Shield, Network, Code, Cpu, Info } from 'lucide-react';
 
 export const WhyChooseUseSection = () => {
   return (
@@ -135,32 +135,30 @@ export const WhyChooseUseSection = () => {
             {/* Right Side - Enhanced Comparison Table */}
             <VStack gap={8} align="stretch">
               {/* Comparison Table with White Background */}
-              <Box bg="white" rounded="xl" p={8} shadow="2xl" border="1px solid" borderColor="gray.200">
+              <Box bg="gray.900" rounded="xl" p={0} border="1px solid" borderColor="gray.800">
                 <VStack gap={6} align="stretch">
-                  <VStack gap={2} textAlign="center" mb={4}>
-                    <Heading size="lg" color="gray.900">
-                      Oracle vs Traditional Data
-                    </Heading>
-                    <Text fontSize="sm" color="gray.600">
+                  <VStack gap={2} textAlign="center" m={4} p={4}>
+                    <Heading size="lg">Oracle vs Traditional Data</Heading>
+                    <Text fontSize="sm" color="fg.muted">
                       Why blockchain oracles are superior
                     </Text>
                   </VStack>
 
                   {/* Table Header */}
-                  <Grid templateColumns="1fr 1fr 1fr" gap={4}>
-                    <Text fontWeight="bold" color="gray.700" fontSize="sm" textAlign="left">
+                  <Grid templateColumns="1fr 1fr 1fr" gap={4} px={4}>
+                    <Text fontWeight="bold" color="fg.muted" fontSize="sm" textAlign="left">
                       Feature
                     </Text>
-                    <Text fontWeight="bold" color="success.600" fontSize="sm" textAlign="left">
+                    <Text fontWeight="bold" color="success.300" fontSize="sm" textAlign="left">
                       Fact Finance Oracle
                     </Text>
-                    <Text fontWeight="bold" color="gray.700" fontSize="sm" textAlign="left">
+                    <Text fontWeight="bold" color="fg.muted" fontSize="sm" textAlign="left">
                       Traditional APIs
                     </Text>
                   </Grid>
 
                   {/* Comparison Rows */}
-                  <VStack gap={0} align="stretch" color="blackAlpha.900" borderTop="1px solid" borderColor="gray.200" pt={4}>
+                  <VStack gap={0} align="stretch" color="fg.muted" borderTop="1px solid" borderColor="gray.800">
                     {[
                       {
                         feature: 'Data Integrity',
@@ -193,11 +191,19 @@ export const WhyChooseUseSection = () => {
                         traditional: 'Centralized Control',
                       },
                     ].map((row, index) => (
-                      <Grid key={index} templateColumns="1fr 1fr 1fr" gap={4} borderBottom="1px solid" borderColor="gray.200" py={4}>
-                        <Text color="gray.800" fontSize="sm">
+                      <Grid
+                        key={index}
+                        templateColumns="1fr 1fr 1fr"
+                        gap={4}
+                        borderBottom="1px solid"
+                        borderColor="gray.800"
+                        py={4}
+                        px={4}
+                      >
+                        <Text color="fg.muted" fontSize="sm">
                           {row.feature}
                         </Text>
-                        <Text flex={1} color="success.700" fontSize="sm" fontWeight="semibold">
+                        <Text flex={1} color="success.300" fontSize="sm" fontWeight="semibold">
                           {row.oracle}
                         </Text>
                         <Text flex={1} fontSize="sm" fontWeight="semibold">
@@ -207,12 +213,12 @@ export const WhyChooseUseSection = () => {
                     ))}
                   </VStack>
 
-                  {/* Bottom Summary */}
-                  <Box bg="brand.50" p={4} rounded="lg" border="1px solid" borderColor="brand.200" mt={4}>
-                    <Text fontSize="sm" color="brand.800" textAlign="center" fontWeight="medium">
+                  <HStack gap={4} px={4} pb={4}>
+                    <Icon as={Info} boxSize={4} color="brand.100" />
+                    <Text fontSize="md" color="brand.100" fontWeight="medium">
                       Fact.Finance Oracle provides superior reliability, transparency, and security
                     </Text>
-                  </Box>
+                  </HStack>
                 </VStack>
               </Box>
             </VStack>

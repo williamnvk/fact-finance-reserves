@@ -161,9 +161,14 @@ const Home = () => {
               <Sparkles size={16} style={{ marginRight: '8px' }} />
               Our Clients: Real-Time Proof of Reserve
             </Badge>
-            <Heading fontSize="5xl" textAlign="center" fontWeight="light" maxW="4xl" lineHeight="1.2"> 
+            <Heading fontSize="5xl" textAlign="center" fontWeight="light" maxW="4xl" lineHeight="1.2">
               Continuous verification for{' '}
-              <Text as="span" fontWeight="bold" bgImage="linear-gradient(35deg, {colors.brand.500}, {colors.brand.400})" bgClip="text">
+              <Text
+                as="span"
+                fontWeight="bold"
+                bgImage="linear-gradient(35deg, {colors.brand.500}, {colors.brand.400})"
+                bgClip="text"
+              >
                 leading tokenized assets
               </Text>
             </Heading>
@@ -241,7 +246,7 @@ const Home = () => {
                                 style={{
                                   display: 'inline',
                                   marginRight: '4px',
-                                  color: growth >= 0 ? '#10B981' : '#EF4444',
+                                  color: growth >= 0 ? 'success.400' : 'error.400',
                                 }}
                               />
                               {growth >= 0 ? '+' : ''}
@@ -255,7 +260,7 @@ const Home = () => {
                             <Stat.Label color="gray.500" fontSize="sm">
                               Reserve Ratio
                             </Stat.Label>
-                            <Stat.ValueText fontSize="2xl" fontWeight="bold" color="brand.600">
+                            <Stat.ValueText fontSize="2xl" fontWeight="bold" color="brand.500">
                               {reserveRatio}%
                             </Stat.ValueText>
                             <Stat.HelpText color="gray.400" fontSize="xs">
@@ -267,8 +272,8 @@ const Home = () => {
                       </Grid>
 
                       {/* Reserve Health Indicator */}
-                       {/* Enhanced Reserve Health Indicator */}
-                       <Box
+                      {/* Enhanced Reserve Health Indicator */}
+                      <Box
                         p={5}
                         bgImage="linear-gradient(35deg, {colors.gray.50}, {colors.gray.100})"
                         rounded="xl"
@@ -288,7 +293,7 @@ const Home = () => {
                         </HStack>
                         <Box w="full" bg="gray.300" rounded="full" h="3" overflow="hidden">
                           <Box
-                            bg="gradient-to-r from-success.400 to-success.500"
+                            bgImage="linear-gradient(35deg, {colors.success.400}, {colors.success.500})"
                             h="3"
                             rounded="full"
                             w={`${reserveRatio}%`}
@@ -306,7 +311,7 @@ const Home = () => {
                             }}
                           />
                         </Box>
-                        <Text fontSize="xs" color="gray.500" mt={2} textAlign="center">
+                        <Text fontSize="xs" color="fg.muted" mt={2} textAlign="center">
                           {reserveRatio}% of assets are fully backed by reserves
                         </Text>
                       </Box>
@@ -316,29 +321,29 @@ const Home = () => {
                       {/* Audit Details */}
                       <VStack gap={3} align="stretch">
                         <HStack justify="space-between" fontSize="sm">
-                          <Text color="gray.500">Last Audit:</Text>
+                          <Text color="fg.muted">Last Audit:</Text>
                           <HStack>
-                            <Text fontWeight="medium" color="gray.700">
+                            <Text fontWeight="medium" color="fg.muted">
                               {latestData.date}
                             </Text>
                             <CheckCircle2 size={14} color="#10B981" />
                           </HStack>
                         </HStack>
                         <HStack justify="space-between" fontSize="sm">
-                          <Text color="gray.500">Check Frequency:</Text>
-                          <Text fontWeight="medium" color="gray.700">
+                          <Text color="fg.muted">Check Frequency:</Text>
+                          <Text fontWeight="medium" color="fg.muted">
                             {client.heartbeat}
                           </Text>
                         </HStack>
                         <HStack justify="space-between" fontSize="sm">
-                          <Text color="gray.500">Compliance Status:</Text>
+                          <Text color="fg.muted">Compliance Status:</Text>
                           <Badge colorPalette="success" size="sm" variant="subtle">
                             <CheckCircle size={10} style={{ marginRight: '4px' }} />
                             Compliant
                           </Badge>
                         </HStack>
                         <HStack justify="space-between" fontSize="sm">
-                          <Text color="gray.500">Risk Level:</Text>
+                          <Text color="fg.muted">Risk Level:</Text>
                           <Badge colorPalette="success" size="sm" variant="subtle">
                             Low Risk
                           </Badge>
@@ -349,7 +354,14 @@ const Home = () => {
 
                   <Card.Footer>
                     <Link to={client.companyName.toLowerCase()}>
-                      <Button variant="ghost" color="brand.800" size="lg" w="full" colorPalette="brand" _hover={{ bg: 'brand.50' }}>
+                      <Button
+                        variant="ghost"
+                        color="brand.800"
+                        size="lg"
+                        w="full"
+                        colorPalette="brand"
+                        _hover={{ bg: 'brand.50' }}
+                      >
                         View Complete Report
                         <ArrowRight size={16} style={{ marginLeft: '8px' }} />
                       </Button>
